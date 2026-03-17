@@ -1,0 +1,149 @@
+{
+  "newton laws": {
+    "explanation": "Newton's laws describe how forces affect motion: inertia, F = m·a, and equal-opposite reactions.",
+    "steps": [
+      "State the three laws in simple words",
+      "Link each law to a daily-life example (seatbelt, pushing cart, recoil)",
+      "Use F = m·a for numerical reasoning",
+      "Draw free-body diagrams to visualize forces"
+    ],
+    "example": "When you kick a football (force), it accelerates; the ball also pushes your foot back (reaction).",
+    "tips": [
+      "Always identify system, forces, and directions",
+      "Check units and magnitudes",
+      "For problems, start with diagrams before equations"
+    ],
+    "mistakes": [
+      "Forgetting reaction pairs act on different bodies",
+      "Mixing mass and weight",
+      "Ignoring friction or normal reaction where relevant"
+    ],
+    "confusion": "If forces feel confusing, list every contact and non-contact force separately, then draw arrows."
+  },
+  "photosynthesis": {
+    "explanation": "Plants convert water and carbon dioxide into glucose and oxygen using light energy in chloroplasts.",
+    "steps": [
+      "Inputs: CO₂ + H₂O; Energy source: sunlight",
+      "Site: chloroplasts (chlorophyll captures light)",
+      "Process: light reactions and Calvin cycle",
+      "Outputs: glucose for energy/storage, oxygen released"
+    ],
+    "example": "A leaf on a sunny day producing oxygen while storing glucose in starch grains.",
+    "tips": [
+      "Remember: light reactions make ATP/NADPH; Calvin cycle fixes carbon",
+      "Photo = light, synthesis = putting together",
+      "Match inputs/outputs like a recipe"
+    ],
+    "mistakes": [
+      "Thinking photosynthesis occurs only in the day for all steps (Calvin cycle can proceed later)",
+      "Confusing respiration with photosynthesis",
+      "Ignoring role of pigments beyond chlorophyll-a"
+    ],
+    "confusion": "Track where each atom goes: CO₂ carbon to glucose; water hydrogens to glucose and oxygen."
+  },
+  "trigonometry basics": {
+    "explanation": "Trigonometry links angles and side ratios in right triangles, enabling height/distance calculations.",
+    "steps": [
+      "Define sine, cosine, tangent as ratios",
+      "Memorize SOH-CAH-TOA",
+      "Use Pythagoras to relate sides",
+      "Apply ratios to find missing sides/angles"
+    ],
+    "example": "If opposite = 3, hypotenuse = 5, sinθ = 3/5, so θ ≈ 36.9°.",
+    "tips": [
+      "Draw the right triangle; label opposite/adjacent carefully",
+      "Use degree/radian mode correctly on calculator",
+      "Check answers by estimating before calculating"
+    ],
+    "mistakes": [
+      "Swapping opposite and adjacent",
+      "Leaving calculator in wrong mode",
+      "Forgetting to use inverse trig for angles"
+    ],
+    "confusion": "If unsure which ratio to use, write known sides and choose the ratio containing them."
+  },
+  "indian constitution fundamentals": {
+    "explanation": "The Constitution of India is the supreme law outlining the framework of government, rights, and duties.",
+    "steps": [
+      "Know the Preamble values: justice, liberty, equality, fraternity",
+      "Understand Parts III (Fundamental Rights) & IV (Directive Principles)",
+      "Study structure: Union, States, Local bodies",
+      "Note key amendments affecting federalism and rights"
+    ],
+    "example": "Article 21 protects life and personal liberty; courts have expanded it to privacy and dignified living.",
+    "tips": [
+      "Link articles to landmark cases",
+      "Remember schedules: languages (8th), states (1st), Panchayats (11th), Municipalities (12th)",
+      "Use mnemonics for fundamental rights ordering"
+    ],
+    "mistakes": [
+      "Mixing Fundamental Duties with Directive Principles",
+      "Confusing justiciable (rights) vs non-justiciable (DPSPs)",
+      "Not tracking key amendments like 42nd, 44th, 73rd, 74th"
+    ],
+    "confusion": "Build a map: Preamble → Parts (III & IV) → Schedules → Landmark cases; revisit with flashcards."
+  },
+  "indian taxation gst": {
+    "explanation": "Goods and Services Tax (GST) is a destination-based indirect tax replacing many central/state levies in India.",
+    "steps": [
+      "Understand CGST, SGST/UTGST, IGST split",
+      "Know slabs: 0%, 5%, 12%, 18%, 28% (with special cesses)",
+      "Input tax credit mechanism prevents cascading",
+      "Compliance: registration thresholds, returns (GSTR-1/3B), e-invoicing for larger businesses"
+    ],
+    "example": "Interstate sale uses IGST; supplier claims ITC on inputs, remits net tax to center which settles with states.",
+    "tips": [
+      "Check latest notifications for rate changes",
+      "Map supply chain to track ITC eligibility",
+      "Mind exemptions and reverse charge scenarios"
+    ],
+    "mistakes": [
+      "Wrongly classifying inter vs intra state supply",
+      "Missing HSN/SAC codes on invoices",
+      "Claiming ITC on blocked credits (e.g., personal consumption)"
+    ],
+    "confusion": "Draw a simple flow: Supplier → Distributor → Retailer with tax arrows to visualize ITC movement."
+  },
+  "overfitting in machine learning": {
+    "explanation": "Overfitting occurs when a model learns noise in training data, harming generalization.",
+    "steps": [
+      "Identify symptoms: low train error, high validation error",
+      "Use simpler models or regularization (L1/L2, dropout)",
+      "Apply data augmentation or gather more diverse data",
+      "Cross-validate and monitor learning curves"
+    ],
+    "example": "A deep net memorizing a small dataset scores 99% train accuracy but 60% validation accuracy.",
+    "tips": [
+      "Stop training early when validation loss rises",
+      "Prefer smaller architectures for small data",
+      "Use weight decay and dropout together for deep nets"
+    ],
+    "mistakes": [
+      "Tuning only on test set (data leakage)",
+      "Using overly complex models for tiny datasets",
+      "Ignoring feature scaling and regularization"
+    ],
+    "confusion": "Plot train vs validation curves; divergence usually signals overfitting."
+  },
+  "photosynthesis class 10 india": {
+    "explanation": "In CBSE Class 10, photosynthesis is explained as a biochemical process producing food in plants using sunlight.",
+    "steps": [
+      "Inputs: CO₂ via stomata, water via roots",
+      "Light absorption by chlorophyll in chloroplasts",
+      "Formation of glucose and release of O₂",
+      "Storage as starch and transport via phloem"
+    ],
+    "example": "Destarching a leaf then iodine test after sunlight exposure shows starch formation.",
+    "tips": [
+      "Remember raw materials, site, products, and evidence experiments",
+      "Link to human respiration for contrast",
+      "Associate sunlight with light-dependent reactions"
+    ],
+    "mistakes": [
+      "Saying stomata absorb sunlight (they do gas exchange)",
+      "Confusing xylem vs phloem transport",
+      "Forgetting to mention chlorophyll as catalyst/absorber"
+    ],
+    "confusion": "Visualize stomata as doors for gases and chloroplasts as factories running on light."
+  }
+}

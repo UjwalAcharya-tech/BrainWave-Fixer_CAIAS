@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainWave - AI Teacher Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='modern-style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">BrainWave</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-page="chat">
+                    <span class="nav-icon">💬</span>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-item" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-page="progress">
+                    <span class="nav-icon">📈</span>
+                    <span>Progress</span>
+                </button>
+                <button class="nav-item" data-page="upload">
+                    <span class="nav-icon">⬆️</span>
+                    <span>Upload</span>
+                </button>
+                <button class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+                <button class="nav-item" data-page="quiz">
+                    <span class="nav-icon">📝</span>
+                    <span>Quiz</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" class="toggle-input">
+                    <label for="theme-toggle" class="toggle-label">
+                        <span>🌙</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- CHAT PAGE -->
+            <div class="page chat-page active">
+                <div class="page-header">
+                    <h1>Chat with BrainWave Fixers</h1>
+                    <p>Your AI-powered problem solving team</p>
+                </div>
+
+                <div class="chat-wrapper">
+                    <div class="messages-container" id="messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hey! 👋 I'm BrainWave Fixers, your AI problem-solving team. What challenge can we fix today?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response-panel" id="responsePanel">
+                        <div class="response-header">
+                            <div class="teacher-info">
+                                <span class="teacher-icon">👨‍🏫</span>
+                                <div>
+                                    <h3>Teacher's Explanation</h3>
+                                    <p class="teacher-subtitle">Learning made simple</p>
+                                </div>
+                            </div>
+                            <span class="ai-badge">AI Tutor</span>
+                        </div>
+                        <div class="response-content" id="responseContent">
+                            <div class="empty-explanation">
+                                <p>📚 Ask a question to start learning!</p>
+                                <p class="hint">Let's explore something new together...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-wrapper">
+                        <textarea id="question" class="chat-input" placeholder="Ask anything..."></textarea>
+                        <button id="voice-btn" class="input-btn voice-btn" title="Voice Input">
+                            <span>🎤</span>
+                        </button>
+                        <button id="send-btn" class="input-btn send-btn" title="Send">
+                            <span>⚡</span>
+                        </button>
+                    </div>
+                    <div id="error-box" class="error-box"></div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD PAGE -->
+            <div class="page dashboard-page">
+                <div class="page-header">
+                    <h1>Learning Dashboard</h1>
+                    <p>Track your progress and achievements</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <p class="stat-label">Learning Time</p>
+                            <p class="stat-value" id="total-time">0h 0m</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <p class="stat-label">Topics Covered</p>
+                            <p class="stat-value" id="topics-count">0</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <p class="stat-label">Quiz Accuracy</p>
+                            <p class="stat-value" id="quiz-accuracy">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-info">
+                            <p class="stat-label">Current Streak</p>
+                            <p class="stat-value" id="streak-count">0 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Weekly Progress</h3>
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+
+            <!-- PROGRESS PAGE -->
+            <div class="page progress-page">
+                <div class="page-header">
+                    <h1>Your Progress</h1>
+                    <p>Master your learning journey</p>
+                </div>
+
+                <div class="progress-sections">
+                    <div class="progress-section">
+                        <div class="section-header">
+                            <h3>Mathematics</h3>
+                            <span class="level-badge">Intermediate</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <p class="progress-text">65% Complete • 13/20 lessons</p>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="section-header">
+                            <h3>Science</h3>
+                            <span class="level-badge">Beginner</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <p class="progress-text">40% Complete • 8/20 lessons</p>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="section-header">
+                            <h3>Programming</h3>
+                            <span class="level-badge">Advanced</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <p class="progress-text">85% Complete • 17/20 lessons</p>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <h3>Achievements</h3>
+                    <div class="badges-grid">
+                        <div class="badge">
+                            <span class="badge-emoji">⭐</span>
+                            <p>First Steps</p>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-emoji">🔥</span>
+                            <p>7-Day Streak</p>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-emoji">🎯</span>
+                            <p>Quiz Master</p>
+                        </div>
+                        <div class="badge unlocked">
+                            <span class="badge-emoji">💎</span>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPLOAD PAGE -->
+            <div class="page upload-page">
+                <div class="page-header">
+                    <h1>Upload Materials</h1>
+                    <p>Learn from your documents with AI</p>
+                </div>
+
+                <div class="upload-container">
+                    <div class="drop-zone" id="drop-zone">
+                        <div class="drop-icon">📄</div>
+                        <p class="drop-title">Drag & drop your file here</p>
+                        <p class="drop-subtitle">or click to browse (PDF, TXT, DOC, IMG)</p>
+                        <input type="file" id="file-input" class="file-input" accept=".pdf,.txt,.doc,.docx,.jpg,.png,.jpeg">
+                    </div>
+
+                    <div class="upload-preview" id="uploadPreview" style="display: none;">
+                        <div class="preview-file">
+                            <span class="preview-icon" id="previewIcon">📄</span>
+                            <div class="preview-info">
+                                <p class="preview-name" id="previewName">File name</p>
+                                <p class="preview-size" id="previewSize">0 KB</p>
+                            </div>
+                        </div>
+                        <button id="analyze-btn" class="btn btn-primary">Analyze with AI</button>
+                    </div>
+
+                    <div class="uploaded-files">
+                        <h3>Recent Uploads</h3>
+                        <div id="filesList" class="files-list">
+                            <p class="empty-state">No files uploaded yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS PAGE -->
+            <div class="page settings-page">
+                <div class="page-header">
+                    <h1>Settings</h1>
+                    <p>Customize your learning experience</p>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-group">
+                        <h3>Appearance</h3>
+                        <div class="setting-item">
+                            <label>Dark Mode</label>
+                            <input type="checkbox" id="dark-mode-toggle" class="toggle-input">
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Profile</h3>
+                        <div class="setting-item">
+                            <label>Your Name</label>
+                            <input type="text" id="username-input" class="text-input" placeholder="Enter your name">
+                            <button id="name-save-btn" class="btn btn-sm">Save</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Preferences</h3>
+                        <div class="setting-item">
+                            <label>Enable Notifications</label>
+                            <input type="checkbox" id="notifications-toggle" class="toggle-input" checked>
+                        </div>
+                        <div class="setting-item">
+                            <label>Voice Output</label>
+                            <input type="checkbox" id="voice-output-toggle" class="toggle-input" checked>
+                        </div>
+                    </div>
+
+                    <div class="settings-group danger">
+                        <h3>Danger Zone</h3>
+                        <button id="reset-btn" class="btn btn-danger">Reset All Progress</button>
+                        <p class="warning-text">⚠️ This action cannot be undone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUIZ PAGE -->
+            <div class="page quiz-page">
+                <div class="page-header">
+                    <h1>Quiz Challenge</h1>
+                    <p>Test your knowledge on recent topics</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-empty" id="quiz-empty">
+                        <p style="font-size: 28px; margin: 0;">📚</p>
+                        <p>No quiz available yet</p>
+                        <p class="quiz-hint">Ask a question in Chat first to generate a quiz!</p>
+                    </div>
+
+                    <div class="quiz-content" id="quiz-content" style="display: none;">
+                        <div class="quiz-header">
+                            <h3 id="quiz-title">Quiz Title</h3>
+                            <div class="quiz-progress">
+                                <span id="quiz-counter">Question 1 of 3</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="quiz-progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-question">
+                            <p id="question-text" class="question-text">Question text</p>
+                            <div class="options-grid" id="options-grid">
+                                <!-- Options will be inserted here -->
+                            </div>
+                        </div>
+
+                        <div class="quiz-actions">
+                            <button id="quiz-submit-btn" class="btn btn-primary">Submit Answer</button>
+                            <button id="quiz-next-btn" class="btn btn-secondary" style="display: none;">Next Question</button>
+                        </div>
+
+                        <div id="quiz-feedback" class="quiz-feedback" style="display: none;"></div>
+                    </div>
+
+                    <div class="quiz-results" id="quiz-results" style="display: none;">
+                        <div class="results-card">
+                            <p class="results-icon" id="results-icon">🎉</p>
+                            <h2 id="results-title">Quiz Complete!</h2>
+                            <p class="results-score" id="results-score">Your Score: 0/0</p>
+                            <p id="results-message" class="results-message">Great job!</p>
+                            <button id="quiz-retry-btn" class="btn btn-primary">Retake Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+<form action="/calculate" method="post">
+    <input type="text" name="expression" placeholder="Enter math (e.g. 5+3*2)">
+    <button type="submit">Calculate</button>
+</form>

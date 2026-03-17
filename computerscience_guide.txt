@@ -1,0 +1,129 @@
+===== COMPUTER SCIENCE EDUCATIONAL RESOURCE =====
+COMPREHENSIVE GUIDE TO CS FUNDAMENTALS, SYSTEMS, SOFTWARE, AND PRACTICE
+
+================================================================================
+CORE CS FUNDAMENTALS
+================================================================================
+- Computational Thinking: decomposition, pattern recognition, abstraction, algorithms
+- Binary & Data: bits/bytes, bases (2/10/16), two’s complement, floating point (IEEE 754), character encodings (ASCII, UTF-8)
+- Complexity: Big-O time/space; common classes O(1), O(log n), O(n), O(n log n), O(n²)
+- Discrete Math: sets, logic, predicates, proofs (induction, contradiction), combinatorics, relations, functions
+- Probability Basics: independence, conditional probability, Bayes’ rule, expectation, variance
+
+================================================================================
+PROGRAMMING ESSENTIALS
+================================================================================
+- Paradigms: procedural, object-oriented, functional, event-driven
+- Core Concepts: variables, control flow, functions, recursion, exceptions, I/O
+- OOP: classes, objects, encapsulation, inheritance, polymorphism, interfaces
+- Functional Ideas: immutability, first-class functions, map/filter/reduce, pure functions
+- Testing: unit tests, assertions, test doubles, coverage; TDD cycle (red/green/refactor)
+
+================================================================================
+DATA STRUCTURES
+================================================================================
+- Linear: arrays, linked lists, stacks, queues, deque
+- Hashing: hash tables/maps/sets; collisions (chaining, open addressing)
+- Trees: binary trees, BST, AVL/Red-Black (balanced), heaps (min/max), tries, segment/fenwick trees
+- Graphs: adjacency list/matrix; directed/undirected; weighted; traversal (BFS, DFS)
+- Other: priority queue, disjoint set (union-find), bloom filter (probabilistic membership)
+
+================================================================================
+ALGORITHMS
+================================================================================
+- Sorting: bubble/selection (teaching), insertion, merge sort, quicksort, heapsort; stability and complexity
+- Searching: binary search; tree/graph search; topological sort
+- Shortest Paths: Dijkstra, Bellman-Ford, Floyd-Warshall; A* (heuristic)
+- MST: Kruskal, Prim
+- Greedy vs Dynamic Programming: coin change, knapsack, LIS, interval scheduling
+- String Algorithms: KMP, Rabin-Karp, suffix array/tree basics
+
+================================================================================
+COMPUTER SYSTEMS & ARCHITECTURE
+================================================================================
+- Von Neumann Model: CPU, memory, I/O, bus
+- Performance: latency vs throughput; Amdahl’s Law
+- CPU Basics: ALU, registers, instruction cycle, pipelining hazards
+- Memory: hierarchy (registers → cache → RAM → disk); locality (temporal/spatial); virtual memory, paging
+- Storage: HDD vs SSD; filesystems (blocks, inodes, journaling)
+- Concurrency: processes vs threads; synchronization (locks, semaphores, monitors); deadlock conditions & avoidance
+
+================================================================================
+NETWORKING
+================================================================================
+- Models: OSI (7 layers) vs TCP/IP (4 layers)
+- Key Protocols: TCP/UDP, IP, DNS, HTTP/HTTPS, TLS/SSL, DHCP, ARP, BGP
+- Sockets: client/server basics, ports, sockets API concepts
+- Web: REST principles, status codes, idempotency, JSON, caching (ETag, Cache-Control)
+- Performance & Reliability: latency, bandwidth, congestion control, retries, backoff
+
+================================================================================
+DATABASES & DATA
+================================================================================
+- Relational: tables, keys, normalization (1NF-3NF), SQL CRUD, joins, indexes, ACID transactions
+- NoSQL Overview: document (MongoDB), key-value (Redis), wide-column (Cassandra), graph (Neo4j); CAP trade-offs
+- Transactions & Isolation: ACID, isolation levels (read committed, repeatable read, serializable); locking vs MVCC
+- Data Modeling: ER diagrams, denormalization for reads, sharding/replication for scale
+- Warehousing & Analytics: ETL/ELT, star vs snowflake schemas, OLTP vs OLAP
+
+================================================================================
+WEB & APP DEVELOPMENT
+================================================================================
+- Frontend Basics: HTML/CSS/JS, semantic markup, accessibility (a11y), responsive design
+- Modern Frontend: components, state management, bundling, API consumption, auth (cookies, tokens)
+- Backend Basics: routing, controllers, templating, ORMs, validation, logging, health checks
+- APIs: REST vs GraphQL; pagination; rate limiting; versioning; OpenAPI/Swagger for docs
+- Deployment: environments (dev/stage/prod), CI/CD, containers (Docker), cloud basics (IaaS/PaaS/SaaS)
+
+================================================================================
+SECURITY BASICS
+================================================================================
+- Principles: least privilege, defense-in-depth, secure defaults
+- Common Risks: OWASP Top 10 (XSS, SQLi, auth/session issues, CSRF, SSRF, etc.)
+- Cryptography Basics: hashing (SHA-256), symmetric (AES), asymmetric (RSA/ECC), TLS handshakes, key management
+- Authentication/Authorization: passwords (hash+salt), MFA, OAuth2/OIDC, JWT considerations
+- Secure Coding: input validation, output encoding, secrets management (.env), dependency updates
+
+================================================================================
+ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+================================================================================
+- Workflow: problem definition → data prep → model → evaluation → deployment → monitoring
+- Supervised Learning: regression, classification (logistic, SVM, trees, random forests, gradient boosting)
+- Unsupervised: clustering (k-means), dimensionality reduction (PCA)
+- Neural Nets: basics of perceptron, backprop, common activations; note: deep learning frameworks (PyTorch/TensorFlow)
+- Evaluation: train/validation/test; metrics (accuracy, precision/recall/F1, ROC-AUC, RMSE); avoid data leakage
+- Ethics: bias, fairness, privacy, transparency; responsible AI practices
+
+================================================================================
+SOFTWARE ENGINEERING PRACTICE
+================================================================================
+- Version Control: git basics (commit, branch, merge, rebase), pull requests, code review
+- Documentation: README, API docs, docstrings, ADRs (architecture decision records)
+- Design: SOLID, DRY, KISS, YAGNI; layered architecture; dependency injection basics
+- Observability: logging, metrics, tracing; error budgets and SLIs/SLOs
+- Project Skills: requirements, user stories, estimation, risk tracking, retrospectives
+
+================================================================================
+KEY REFERENCE TABLES
+================================================================================
+Big-O Quick Sheet (common cases):
+- Array access O(1); search O(n); insert/delete middle O(n)
+- Hash map average get/put O(1); worst O(n)
+- Binary search tree balanced: search/insert/delete O(log n); unbalanced O(n)
+- Sorting: merge/heap/quicksort average O(n log n); bubble/selection O(n²)
+
+Networking Ports (common):
+- HTTP 80, HTTPS 443, DNS 53, SSH 22, SMTP 25/587, FTP 21, MySQL 3306, Postgres 5432
+
+HTTP Status Families:
+- 1xx informational; 2xx success; 3xx redirects; 4xx client errors; 5xx server errors
+
+================================================================================
+CAREER & STUDY TIPS
+================================================================================
+- Practice: small projects, katas, open-source contributions
+- Learn by Teaching: explain algorithms to others; whiteboard or journal
+- Debugging: reproduce, isolate, inspect state, add logs, binary search the bug
+- Build Portfolio: host on GitHub; document readme, tests, demo links
+- Interview Prep: DS/Algo practice, system design sketches, clear communication
+- Well-being: take breaks, use version control often, write tests early

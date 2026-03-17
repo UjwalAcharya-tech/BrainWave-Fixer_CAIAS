@@ -1,0 +1,68 @@
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import OpenAI from "openai";
+
+dotenv.config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+// 🔹 Chat Route (REAL AI)
+app.post("/chat", async (req, res) => {
+  try {
+    const userMsg = req.body.message;
+
+    const response = await client.chat.completions.create({
+      model: "gpt-4.1-mini", // fast + powerful
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a professional AI teacher. Explain clearly like a teacher in a classroom with examples.",
+        },
+        {
+          role: "user",
+          content: userMsg,
+        },
+      ],
+    });
+
+    res.json({
+      reply: response.choices[0].message.content,
+    });
+  } catch (error) {
+    console.error(error);
+    res.json({ reply: "Error connecting to AI" });
+  }
+});
+
+// 🔹 Quiz Generator (AI powered)
+app.post("/quiz", async (req, res) => {
+  try {
+    const topic = req.body.topic || "general knowledge";
+
+    const response = await client.chat.completions.create({
+      model: "gpt-4.1-mini",
+      messages: [
+        {
+          role: "user",
+          content: `Generate a 5-question quiz with answers on ${topic}`,
+        },
+      ],
+    });
+
+    res.json({
+      quiz: response.choices[0].message.content,
+    });
+  } catch (err) {
+    res.json({ quiz: "Error generating quiz" });
+  }
+});
+
+app.listen(3000, () => console.log("🔥 AI Server running on port 3000"));

@@ -1,0 +1,693 @@
+===== SCIENCE EDUCATIONAL RESOURCE =====
+COMPREHENSIVE GUIDE TO PHYSICS, CHEMISTRY, BIOLOGY & EARTH SCIENCE
+
+================================================================================
+PHYSICS FUNDAMENTALS
+================================================================================
+
+CLASSICAL MECHANICS
+- Newton's Laws:
+  * First Law: Object in motion stays in motion unless acted upon by force
+  * Second Law: F = ma (Force equals mass times acceleration)
+  * Third Law: For every action, there is equal and opposite reaction
+- Kinematics: Study of motion
+  * Velocity: rate of change of displacement (v = Δx/Δt)
+  * Acceleration: rate of change of velocity (a = Δv/Δt)
+  * Equations of motion: v = u + at, s = ut + ½at², v² = u² + 2as
+- Dynamics: Study of forces causing motion
+  * Friction: opposes motion (f = μN)
+  * Normal force: perpendicular to surface
+  * Applied force: external force on object
+
+ENERGY AND WORK
+- Kinetic Energy: KE = ½mv² (energy of motion)
+- Potential Energy: PE = mgh (gravitational potential energy)
+- Elastic PE: PE = ½kx² (energy stored in spring)
+- Work: W = Fd cosθ (force × distance × angle)
+- Power: P = W/t (work per unit time)
+- Conservation of Energy: Total energy remains constant in isolated system
+- Efficiency: η = (useful output / total input) × 100%
+
+MOMENTUM AND COLLISIONS
+- Momentum: p = mv (mass × velocity)
+- Impulse: J = FΔt = Δp
+- Conservation of Momentum: Initial momentum = Final momentum
+- Elastic Collision: kinetic energy is conserved
+- Inelastic Collision: kinetic energy is not conserved
+- Center of Mass: point where total mass appears concentrated
+
+WAVES AND VIBRATIONS
+- Wave Properties:
+  * Wavelength (λ): distance between consecutive crests
+  * Frequency (f): number of cycles per second (Hz)
+  * Period (T): time for one complete cycle (T = 1/f)
+  * Amplitude: maximum displacement from equilibrium
+  * Speed: v = fλ
+- Types of Waves:
+  * Transverse: oscillation perpendicular to direction (light, strings)
+  * Longitudinal: oscillation parallel to direction (sound, springs)
+- Doppler Effect: apparent change in frequency when source moves
+  * Moving toward observer: frequency increases
+  * Moving away: frequency decreases
+- Interference: superposition of waves
+  * Constructive: waves add (amplitude increases)
+  * Destructive: waves cancel (amplitude decreases)
+- Resonance: maximum amplitude when driving frequency equals natural frequency
+
+LIGHT AND OPTICS
+- Properties of Light:
+  * Visible spectrum: 400-700 nanometers
+  * Speed in vacuum: c = 3×10⁸ m/s
+  * Refractive index: n = c/v
+- Reflection: light bounces off surface
+  * Law of reflection: incident angle = reflected angle
+  * Specular reflection: smooth surfaces
+  * Diffuse reflection: rough surfaces
+- Refraction: light bends when entering different medium
+  * Snell's Law: n₁sinθ₁ = n₂sinθ₂
+  * Critical angle: total internal reflection occurs
+- Lenses:
+  * Converging lens (convex): focuses light to focal point
+  * Diverging lens (concave): spreads light apart
+  * Focal length: f, lens equation: 1/f = 1/u + 1/v
+- Optical Instruments: magnifying glass, microscope, telescope
+
+ELECTRICITY AND MAGNETISM
+- Electric Charge:
+  * Charge (Q): fundamental property (Coulombs)
+  * Coulomb's Law: F = kQ₁Q₂/r² (force between charges)
+  * Electric field: region where charge experiences force
+- Current and Voltage:
+  * Current (I): flow of charge (Amperes) I = Q/t
+  * Voltage (V): electric potential difference (Volts)
+  * Ohm's Law: V = IR (Voltage = Current × Resistance)
+- Resistance:
+  * Resistivity (ρ): property of material
+  * R = ρL/A (length/cross-sectional area)
+  * Temperature affects resistance
+- Power and Energy:
+  * Electrical power: P = VI = I²R = V²/R (Watts)
+  * Energy: E = Pt (Joules)
+- Circuits:
+  * Series: same current, voltages add, resistances add
+  * Parallel: same voltage, currents add, 1/R_total = 1/R₁ + 1/R₂
+  * Kirchhoff's Laws: current conservation, voltage conservation
+- Magnetism:
+  * Magnetic field: region where magnetic force acts
+  * Magnetic flux: Φ = BA cosθ
+  * Force on current-carrying wire: F = BIL sinθ
+  * Lorentz force: F = q(v × B) for moving charge
+- Electromagnetic Induction:
+  * Faraday's Law: induced EMF = -dΦ/dt
+  * Lenz's Law: induced current opposes change in flux
+  * Transformer equation: V₁/V₂ = N₁/N₂
+
+================================================================================
+CHEMISTRY ESSENTIALS
+================================================================================
+
+ATOMIC STRUCTURE
+- Subatomic Particles:
+  * Protons: positive charge, mass ≈ 1 amu, in nucleus
+  * Neutrons: no charge, mass ≈ 1 amu, in nucleus
+  * Electrons: negative charge, mass ≈ 1/1836 amu, in orbitals
+- Atomic Number (Z): number of protons (identifies element)
+- Mass Number (A): protons + neutrons
+- Isotopes: same element, different number of neutrons
+- Electron Orbitals:
+  * s, p, d, f orbitals with different shapes
+  * Aufbau principle: fill lowest energy first
+  * Hund's rule: fill orbitals singly first with parallel spins
+  * Pauli exclusion: maximum 2 electrons per orbital
+
+PERIODIC TABLE
+- Organization:
+  * Periods: horizontal rows (electron shells)
+  * Groups: vertical columns (similar properties)
+- Element Properties:
+  * Alkali metals (Group 1): very reactive, soft
+  * Alkaline earth metals (Group 2): reactive, divalent
+  * Halogens (Group 17): very reactive, form -1 ions
+  * Noble gases (Group 18): unreactive, full valence shell
+- Trends:
+  * Atomic radius: increases down group, decreases across period
+  * Ionization energy: increases across period, decreases down group
+  * Electronegativity: increases across period, decreases down group
+  * Metallic character: increases down group, decreases across period
+
+CHEMICAL BONDING
+- Ionic Bonds:
+  * Transfer of electrons from metal to nonmetal
+  * Forms cations (positive) and anions (negative)
+  * High melting points, soluble in polar solvents
+  * Electrostatic attraction
+- Covalent Bonds:
+  * Sharing of electron pairs
+  * Nonmetals bonded to nonmetals
+  * Single (1 pair), double (2 pairs), triple (3 pairs)
+  * Polar: unequal sharing (different electronegativities)
+  * Nonpolar: equal sharing (same electronegativities)
+- Metallic Bonds:
+  * Delocalized electrons in "electron sea"
+  * Good conductors, malleable, ductile
+  * High melting points
+- Intermolecular Forces (van der Waals):
+  * Dipole-dipole: between polar molecules
+  * London dispersion: weak forces between all molecules
+  * Hydrogen bonding: special dipole-dipole with H, N, O, F
+
+MOLECULAR GEOMETRY
+- VSEPR Theory (Valence Shell Electron Pair Repulsion):
+  * Electron pairs repel and position to minimize repulsion
+  * Steric number: bonding pairs + lone pairs
+  * Linear (180°), Trigonal planar (120°), Tetrahedral (109.5°)
+  * Trigonal bipyramidal (120°/90°), Octahedral (90°)
+- Molecular Polarity:
+  * Dipole moment: measure of polarity
+  * Polar molecule: asymmetrical charge distribution
+  * Nonpolar molecule: symmetrical or no dipoles
+
+STOICHIOMETRY
+- Atomic and Molar Mass:
+  * Molar mass: mass of 1 mole in grams
+  * Avogadro's number: 6.022 × 10²³ particles/mole
+- Chemical Equations:
+  * Balance atoms on each side
+  * Coefficients represent molar ratios
+  * Limiting reagent: reactant that runs out first
+  * Theoretical yield: calculated maximum product
+  * Percent yield: (actual/theoretical) × 100%
+- Gas Laws:
+  * Ideal Gas Law: PV = nRT (P=pressure, V=volume, n=moles, T=temperature)
+  * Combined Gas Law: (P₁V₁/T₁) = (P₂V₂/T₂)
+  * Dalton's Law: P_total = P₁ + P₂ + ... (partial pressures)
+
+CHEMICAL REACTIONS
+- Types:
+  * Combustion: reacts with oxygen (exothermic)
+  * Combination: two substances form one compound
+  * Decomposition: one compound breaks into simpler substances
+  * Single displacement: element replaces another element
+  * Double displacement: ions exchange between compounds
+  * Acid-base: H⁺ + OH⁻ → H₂O
+  * Redox: transfer of electrons
+- Redox Reactions:
+  * Oxidation: loss of electrons (oxidation state increases)
+  * Reduction: gain of electrons (oxidation state decreases)
+  * Oxidizing agent: causes oxidation (gets reduced)
+  * Reducing agent: causes reduction (gets oxidized)
+
+STATES OF MATTER
+- Solid:
+  * Fixed shape and volume
+  * Particles tightly packed, vibrate in place
+  * Crystalline (ordered) or amorphous (random)
+- Liquid:
+  * Fixed volume, takes shape of container
+  * Particles close together, can move
+  * Surface tension, viscosity properties
+- Gas:
+  * No fixed shape or volume
+  * Particles far apart, move randomly
+  * High kinetic energy
+- Plasma:
+  * Ionized gas with free electrons and ions
+  * Found in stars, lightning, neon signs
+- Phase Changes:
+  * Melting: solid → liquid (absorbed heat)
+  * Freezing: liquid → solid (released heat)
+  * Vaporization: liquid → gas (absorbed heat)
+  * Condensation: gas → liquid (released heat)
+  * Sublimation: solid → gas (absorbed heat)
+
+THERMOCHEMISTRY
+- Enthalpy (H): total heat content of system
+  * ΔH = H_products - H_reactants
+  * Exothermic: ΔH < 0 (releases heat)
+  * Endothermic: ΔH > 0 (absorbs heat)
+- Entropy (S): measure of disorder/randomness
+  * Increase in entropy favors spontaneous reactions
+  * ΔS_surroundings > 0 for spontaneous at high T
+- Gibbs Free Energy (G):
+  * ΔG = ΔH - TΔS
+  * ΔG < 0: spontaneous (forward reaction favored)
+  * ΔG > 0: non-spontaneous (reverse reaction favored)
+  * ΔG = 0: at equilibrium
+
+CHEMICAL EQUILIBRIUM
+- Equilibrium Constant (K):
+  * K = [products]/[reactants] at equilibrium
+  * K >> 1: reaction goes to completion
+  * K << 1: very little product forms
+  * K ≈ 1: significant amounts of both
+- Le Chatelier's Principle:
+  * Increase concentration: shifts away from that substance
+  * Decrease concentration: shifts toward that substance
+  * Increase temperature: shifts toward endothermic direction
+  * Increase pressure: shifts toward fewer moles of gas
+  * Catalyst: increases rate but doesn't shift equilibrium
+
+================================================================================
+BIOLOGY CORE CONCEPTS
+================================================================================
+
+CELL STRUCTURE AND FUNCTION
+- Prokaryotic Cells:
+  * No nucleus (DNA in nucleoid region)
+  * No membrane-bound organelles
+  * Bacteria and archaea
+  * Smaller (typically 1-10 μm)
+  * Ribosomes: 70S
+- Eukaryotic Cells:
+  * Nucleus contains DNA
+  * Membrane-bound organelles
+  * Animals, plants, fungi, protists
+  * Larger (typically 10-100 μm)
+  * Ribosomes: 80S
+- Cell Membrane:
+  * Phospholipid bilayer with embedded proteins
+  * Selectively permeable
+  * Controls what enters and exits cell
+- Major Organelles:
+  * Nucleus: contains genetic material, controls cell
+  * Mitochondria: powerhouse, ATP production (cellular respiration)
+  * Endoplasmic Reticulum: rough (protein synthesis), smooth (lipid synthesis)
+  * Golgi Apparatus: modifies and packages proteins
+  * Lysosomes: contain digestive enzymes, break down waste
+  * Ribosomes: site of protein synthesis
+  * Centrioles: involved in cell division
+  * Cytoskeleton: provides cell structure and movement
+
+CELL DIVISION
+- Mitosis: produces 2 identical daughter cells (somatic cell division)
+  * Prophase: chromosomes condense, spindle forms
+  * Metaphase: chromosomes align at cell equator
+  * Anaphase: sister chromatids separate
+  * Telophase: nuclear envelopes reform
+  * Cytokinesis: cytoplasm divides
+- Meiosis: produces 4 haploid gametes (sex cells)
+  * Meiosis I: homologous chromosomes separate (reduces ploidy)
+  * Meiosis II: sister chromatids separate
+  * Results in genetic variation through crossing over and independent assortment
+
+CELLULAR RESPIRATION
+- Glycolysis (in cytoplasm):
+  * Glucose (C₆H₁₂O₆) → 2 Pyruvate
+  * Net: 2 ATP + 2 NADH
+  * Anaerobic process
+- Citric Acid Cycle (in mitochondrial matrix):
+  * Acetyl-CoA → CO₂
+  * Produces: NADH, FADH₂, ATP, GTP
+  * Aerobic process
+- Electron Transport Chain (inner mitochondrial membrane):
+  * NADH and FADH₂ donate electrons
+  * Electrons move through proteins, creating proton gradient
+  * ATP synthase: chemiosmosis produces ~30-32 ATP per glucose
+- Fermentation (anaerobic):
+  * Lactic acid fermentation: pyruvate → lactate (muscles during exercise)
+  * Alcohol fermentation: pyruvate → ethanol + CO₂ (yeast, bacteria)
+
+PHOTOSYNTHESIS
+- Light Reactions (in thylakoid membranes):
+  * Photosystem II: absorbs light, splits water (2H₂O → O₂ + 4H⁺ + 4e⁻)
+  * Electron transport chain: pumps H⁺ across membrane
+  * Photosystem I: reduces NADP⁺ to NADPH
+  * ATP synthase: creates ATP via chemiosmosis
+  * Products: ATP, NADPH, O₂
+- Calvin Cycle (in stroma):
+  * Carbon fixation: CO₂ + RuBP → 3-PG (catalyzed by RuBisCO)
+  * Reduction: 3-PG → G3P (uses ATP, NADPH)
+  * Regeneration: G3P → RuBP (uses ATP)
+  * Products: glucose (C₆H₁₂O₆)
+- Overall: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂
+
+GENETICS AND HEREDITY
+- DNA Structure:
+  * Double helix of nucleotides (A, T, G, C)
+  * Sugar-phosphate backbone
+  * Base pairs: A-T (2 bonds), G-C (3 bonds)
+  * Antiparallel strands
+- DNA Replication:
+  * Semi-conservative: each strand serves as template
+  * DNA polymerase: adds nucleotides
+  * Leading strand: continuous synthesis 5'→3'
+  * Lagging strand: discontinuous (Okazaki fragments)
+- Transcription (DNA → RNA):
+  * RNA polymerase: reads template strand
+  * mRNA: carries genetic code (A, U, G, C)
+  * tRNA: transfers amino acids
+  * rRNA: part of ribosome
+- Translation (mRNA → Protein):
+  * Codons: 3 nucleotides code for amino acid
+  * Start codon: AUG
+  * Stop codons: UAA, UAG, UGA
+  * 64 codons code for 20 amino acids
+- Genes and Alleles:
+  * Gene: segment of DNA coding for protein
+  * Allele: different versions of gene
+  * Dominant: expressed in heterozygotes
+  * Recessive: only expressed in homozygotes
+- Mendelian Inheritance:
+  * Law of Segregation: alleles separate during gamete formation
+  * Law of Independent Assortment: genes assort randomly
+  * Punnett square: predicts offspring genotypes
+- Mutations:
+  * Point mutation: single nucleotide change
+  * Insertion/Deletion: adds or removes nucleotides
+  * Chromosome mutations: large-scale changes
+  * Most are neutral, some beneficial, some harmful
+
+EVOLUTION
+- Evidence for Evolution:
+  * Fossils: record of past life
+  * Comparative anatomy: similar structures in different species
+  * Molecular evidence: DNA/protein similarities
+  * Biogeography: distribution of species worldwide
+  * Observed evolution: bacteria resistance, peppered moths
+- Natural Selection:
+  * Variation: individuals differ in traits
+  * Heredity: traits can be inherited
+  * Differential reproduction: some survive/reproduce better
+  * Result: allele frequencies change over time
+- Speciation:
+  * Reproductive isolation: populations can't interbreed
+  * Geographic isolation: separated by barriers
+  * Behavioral isolation: different mating behaviors
+  * Temporal isolation: breed at different times
+- Hardy-Weinberg Equilibrium:
+  * p² + 2pq + q² = 1 (genotype frequencies)
+  * Predicts allele frequencies stay constant without evolution
+
+ECOLOGY
+- Population Dynamics:
+  * Birth rate, death rate, immigration, emigration
+  * Exponential growth: doubling under ideal conditions
+  * Logistic growth: limited by carrying capacity
+  * Population density affects survival
+- Community Interactions:
+  * Predation: predator eats prey
+  * Competition: organisms compete for resources
+  * Symbiosis: mutualism (+/+), parasitism (+/-), commensalism (+/0)
+  * Herbivory: animals eat plants
+- Energy Flow:
+  * Producers (plants): fix solar energy via photosynthesis
+  * Primary consumers (herbivores): eat plants
+  * Secondary consumers (carnivores): eat herbivores
+  * Tertiary consumers: eat secondary consumers
+  * Decomposers: break down dead matter
+  * Energy efficiency: ~10% transferred at each trophic level
+- Biogeochemical Cycles:
+  * Carbon cycle: CO₂ ↔ atmosphere, biosphere, lithosphere
+  * Nitrogen cycle: atmosphere → soil → organisms → decomposers
+  * Water cycle: evaporation, condensation, precipitation, infiltration
+  * Phosphorus cycle: weathering → soil → organisms → decomposers
+
+HUMAN BODY SYSTEMS
+- Digestive System:
+  * Mouth: mechanical and chemical digestion (amylase)
+  * Stomach: acid digestion of protein (pepsin)
+  * Small intestine: chemical digestion and nutrient absorption
+  * Large intestine: water absorption, fecal formation
+  * Pancreas: produces digestive enzymes
+  * Liver: bile production aids fat digestion
+- Circulatory System:
+  * Heart: pumps blood
+  * Arteries: carry blood away from heart
+  * Veins: return blood to heart
+  * Capillaries: site of gas and nutrient exchange
+  * Blood: carries oxygen, nutrients, hormones, waste
+- Respiratory System:
+  * Nose/mouth: warm and filter air
+  * Trachea/bronchi: conduct air to lungs
+  * Lungs: gas exchange in alveoli
+  * Diaphragm: muscle controlling breathing
+  * Hemoglobin: carries oxygen in blood
+- Nervous System:
+  * Brain: central control center
+  * Spinal cord: transmits signals
+  * Neurons: transmit electrical/chemical signals
+  * Synapses: gaps between neurons
+  * Neurotransmitters: carry signals across synapse
+- Endocrine System:
+  * Pituitary: master gland, controls other glands
+  * Thyroid: regulates metabolism
+  * Adrenals: stress response (adrenaline, cortisol)
+  * Pancreas: blood glucose regulation (insulin, glucagon)
+- Immune System:
+  * Innate immunity: non-specific (fever, inflammation, lysozyme)
+  * Adaptive immunity: specific to pathogen (B cells produce antibodies, T cells)
+  * Vaccination: primes immune system without causing disease
+
+REPRODUCTION
+- Asexual Reproduction:
+  * Binary fission: bacteria divide into two identical cells
+  * Budding: organism grows bud that detaches
+  * Fragmentation: organism breaks into pieces
+  * Advantages: rapid, no mate needed
+  * Disadvantages: no genetic variation
+- Sexual Reproduction:
+  * Gamete formation: meiosis produces haploid sex cells
+  * Fertilization: sperm + egg = diploid zygote
+  * Advantages: genetic variation, adaptation
+  * Disadvantages: slower, need to find mate
+- Human Reproduction:
+  * Male: testes produce sperm
+  * Female: ovaries produce eggs
+  * Menstrual cycle: ~28 days, ovulation ~day 14
+  * Pregnancy: fertilization → implantation → development → birth
+
+================================================================================
+EARTH SCIENCE
+================================================================================
+
+PLATE TECTONICS
+- Earth's Structure:
+  * Crust: thin solid outer layer (oceanic, continental)
+  * Mantle: hot rock, convection drives plate movement
+  * Core: outer (liquid iron/nickel), inner (solid iron)
+- Plate Tectonics Theory:
+  * Lithosphere divided into plates
+  * Plates move slowly (cm/year)
+  * Continental drift: continents move over time
+  * Evidence: fossil distribution, seafloor spreading, paleomagnetic
+- Plate Boundaries:
+  * Convergent: plates collide (subduction, mountain building, earthquakes)
+  * Divergent: plates separate (ocean ridge, seafloor spreading, rifts)
+  * Transform: plates slide past (earthquakes, no crust creation/destruction)
+- Earthquakes:
+  * Caused by sudden release of stress at faults
+  * P-waves: fast, compress and stretch (arrive first)
+  * S-waves: slower, perpendicular motion (arrive second)
+  * Surface waves: slowest, most damaging
+  * Magnitude: Richter scale (logarithmic, energy released)
+  * Intensity: Modified Mercalli scale (observed damage)
+
+ROCKS AND MINERALS
+- Minerals:
+  * Inorganic solids with orderly crystal structure
+  * Defined chemical composition
+  * Physical properties: hardness (Mohs scale), luster, streak, color
+  * Examples: quartz, feldspar, mica, calcite
+- Igneous Rocks (cooled/solidified magma):
+  * Intrusive: cooled slowly underground (granite, diorite)
+  * Extrusive: cooled quickly at surface (basalt, obsidian)
+  * Mafic: dark, dense, Fe/Mg rich (basalt)
+  * Felsic: light, less dense, Si/Al rich (granite)
+- Sedimentary Rocks (compacted sediment):
+  * Classified: sandstone, siltstone, shale (clastic)
+  * Chemical: halite, limestone (precipitate from solution)
+  * Bioclastic: chalk, coquina (organic)
+  * Fossils commonly found
+- Metamorphic Rocks (altered by heat/pressure):
+  * Contact metamorphism: near igneous intrusion
+  * Regional metamorphism: mountain building
+  * Examples: schist, gneiss, marble, slate
+  * Foliiation: banded appearance from directed pressure
+
+WEATHERING AND EROSION
+- Mechanical Weathering:
+  * Frost wedging: water freezes in cracks
+  * Exfoliation: surface sheets separate
+  * Abrasion: grinding by sediment
+- Chemical Weathering:
+  * Oxidation: iron combines with oxygen
+  * Hydrolysis: water breaks bonds
+  * Dissolution: minerals dissolve in water
+  * Acid rain: accelerates chemical weathering
+- Erosion:
+  * Gravity: direct downslope movement (landslides)
+  * Water: streams, rivers carve valleys
+  * Ice: glaciers transport massive amounts
+  * Wind: deflation removes fine particles
+  * Results: canyons, deltas, depositional features
+
+ATMOSPHERE
+- Composition:
+  * Nitrogen (78%), Oxygen (21%), Argon (0.93%), CO₂ (0.04%), trace gases
+- Layers:
+  * Troposphere: weather occurs, temperature decreases with altitude
+  * Stratosphere: ozone absorbs UV, temperature increases
+  * Mesosphere: coldest layer
+  * Thermosphere: temperature increases
+  * Exosphere: outer edge, space
+- Weather:
+  * Air pressure: high pressure = fair weather, low = storms
+  * Humidity: amount of water vapor
+  * Temperature: affects weather patterns
+  * Wind: caused by pressure differences
+  * Clouds: water droplets suspended in air
+- Climate:
+  * Long-term weather patterns
+  * Determined by latitude, ocean currents, elevation
+  * Climate zones: tropical, subtropical, temperate, polar
+- Greenhouse Effect:
+  * CO₂, CH₄, H₂O trap heat
+  * Natural: keeps Earth habitable
+  * Enhanced: human activities increase greenhouse gases
+  * Global warming: rising average temperatures
+
+OCEANS
+- Properties:
+  * Salinity: ~35 ppt (mostly NaCl)
+  * Temperature: varies with depth and latitude
+  * Density: increases with depth
+- Ocean Currents:
+  * Surface currents: wind-driven (gyres)
+  * Deep currents: density differences
+  * Gulf Stream: warm water northward
+  * Thermohaline circulation: global conveyor
+- Tides:
+  * Caused by Moon's gravity (Sun contributes)
+  * Spring tide: Sun and Moon aligned (maximum range)
+  * Neap tide: Sun and Moon perpendicular (minimum range)
+  * Daily tides from Moon's rotation
+- Marine Zones:
+  * Epipelagic (photic): light, photosynthesis
+  * Bathypelagic (abyssal): dark, low temperature, high pressure
+  * Hadal: deepest trenches
+  * Benthic: ocean floor
+
+================================================================================
+KEY EQUATIONS REFERENCE
+================================================================================
+Physics:
+- F = ma (Newton's Second Law)
+- v = u + at (velocity)
+- s = ut + ½at² (displacement)
+- v² = u² + 2as (final velocity)
+- W = Fd (work)
+- P = W/t (power)
+- E = mc² (energy-mass equivalence)
+- KE = ½mv² (kinetic energy)
+- PE = mgh (gravitational potential energy)
+- p = mv (momentum)
+- F = kQ₁Q₂/r² (Coulomb's Law)
+- V = IR (Ohm's Law)
+- P = VI (electrical power)
+- F = BIL (force on current)
+
+Chemistry:
+- pH = -log[H⁺]
+- pOH = -log[OH⁻]
+- pH + pOH = 14
+- ΔG = ΔH - TΔS (Gibbs free energy)
+- PV = nRT (Ideal Gas Law)
+- K = [products]/[reactants] (equilibrium constant)
+- M = n/V (molarity)
+- n = m/M (moles)
+
+Biology:
+- ATP: primary energy currency
+- Photosynthesis: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂
+- Respiration: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy
+- Hardy-Weinberg: p² + 2pq + q² = 1
+
+================================================================================
+SCIENTIFIC METHOD REVIEW
+================================================================================
+1. Observation: gather information about natural world
+2. Hypothesis: make testable prediction
+3. Experiment: design controlled test of hypothesis
+   - Independent variable: what you change
+   - Dependent variable: what you measure
+   - Control group: unchanged
+   - Experimental group: with treatment
+4. Analysis: examine results using statistics
+5. Conclusion: interpret results relative to hypothesis
+6. Report: communicate findings (peer review)
+
+================================================================================
+PRACTICE QUESTIONS
+================================================================================
+Physics:
+Q1: What is the SI unit for force? Answer: Newton (N)
+Q2: Calculate kinetic energy of 5kg object moving at 10 m/s. Answer: KE = ½(5)(10²) = 250 J
+Q3: What is the relationship between wavelength and frequency? Answer: v = fλ
+
+Chemistry:
+Q4: What is the pH of pure water at 25°C? Answer: pH = 7 (neutral)
+Q5: What percentage of air is oxygen? Answer: ~21%
+Q6: Balance: CH₄ + O₂ → CO₂ + H₂O Answer: CH₄ + 2O₂ → CO₂ + 2H₂O
+
+Biology:
+Q7: What is the process by which plants make glucose? Answer: Photosynthesis
+Q8: How many ATP are produced in aerobic respiration? Answer: ~30-32 ATP
+Q9: Define natural selection. Answer: Differential survival and reproduction
+
+Earth Science:
+Q10: What causes earthquakes? Answer: Release of stress at faults
+Q11: What are the three types of rocks? Answer: Igneous, sedimentary, metamorphic
+Q12: What is the main gas in Earth's atmosphere? Answer: Nitrogen (78%)
+
+================================================================================
+LABORATORY SAFETY
+================================================================================
+- Always wear protective equipment: safety goggles, lab coat, gloves
+- Know location of fire extinguishers, safety showers, eyewash stations
+- Never eat, drink, or apply cosmetics in laboratory
+- Wash hands before and after lab work
+- Report accidents, spills, and injuries immediately
+- Dispose of chemical waste in designated containers
+- Read Material Safety Data Sheets (MSDS) for chemicals
+- Don't pipette by mouth - use pipette bulbs
+- Tie back long hair, wear closed-toe shoes
+- Be aware of hot equipment and surfaces
+- Keep work area clean and organized
+- Follow all written procedures
+
+================================================================================
+ADDITIONAL RESOURCES
+================================================================================
+- Khan Academy: comprehensive video lessons
+- PhET Simulations: interactive physics and chemistry
+- NCBI PubMed: scientific literature
+- Nature.com: current research articles
+- Textbooks: Campbell Biology, Halliday & Resnick Physics, Brown Chemistry
+================================================================================
+
+ASTRONOMY & SPACE SCIENCE
+================================================================================
+- Solar System: star (Sun), 8 planets, dwarf planets, moons, asteroids, comets
+- Kepler's Laws: 1) elliptical orbits; 2) equal areas in equal times; 3) T� ? a�
+- Light & Telescopes: spectrum (radio?gamma); reflecting vs refracting telescopes
+- Stars: lifecycle (nebula ? main sequence ? red giant ? white dwarf / supernova ? neutron star or black hole)
+- Galaxies: spiral, elliptical, irregular; Milky Way is a barred spiral
+- Cosmology: Big Bang (~13.8B years), cosmic microwave background, expansion (Hubble�s Law v = H0d)
+- Missions: Apollo, Voyager, Hubble, JWST, Mars rovers (Curiosity, Perseverance), Artemis
+
+ENVIRONMENTAL SCIENCE & CLIMATE
+================================================================================
+- Cycles: carbon, nitrogen, phosphorus; human impacts (fossil fuels, fertilizer runoff)
+- Ecosystem Services: provisioning, regulating, cultural, supporting
+- Climate Change: greenhouse gases (CO2, CH4, N2O); evidence�warming temps, rising seas, glacier retreat
+- Energy Solutions: efficiency, renewables (solar, wind, hydro, geothermal), nuclear fission/fusion research
+- Pollution: air (smog, particulates), water (eutrophication), soil (pesticides, heavy metals)
+- Sustainability: circular economy, conservation biology, protected areas, habitat restoration
+
+DATA ANALYSIS & LAB SKILLS
+================================================================================
+- Units & SI: base units (m, kg, s, A, K, mol, cd); prefixes (k, M, �, n)
+- Measurement: significant figures; uncertainty (�); percent error = |measured-true|/true � 100%
+- Graphing: proper axes with units, best-fit line, slope meaning
+- Experimental Design: controls, variables, sample size, repeats, bias reduction
+- Statistics Basics: mean, median, standard deviation; correlation ? causation
