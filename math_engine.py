@@ -1,5 +1,23 @@
+import math
 import re
-import sympy as sp
+from typing import Dict, Union
+
+import sympy as sp  # type: ignore
+
+# Whitelisted math helpers for the lightweight calculator
+SAFE_MATH_FUNCS = {
+    "sin": lambda x: math.sin(math.radians(x)),
+    "cos": lambda x: math.cos(math.radians(x)),
+    "tan": lambda x: math.tan(math.radians(x)),
+    "asin": lambda x: math.degrees(math.asin(x)),
+    "acos": lambda x: math.degrees(math.acos(x)),
+    "atan": lambda x: math.degrees(math.atan(x)),
+    "sqrt": math.sqrt,
+    "log": math.log10,  # base 10
+    "ln": math.log,     # natural log
+    "pi": math.pi,
+    "e": math.e,
+}
 
 
 def is_math_question(q: str) -> bool:
@@ -16,50 +34,50 @@ def is_math_question(q: str) -> bool:
             "simplify",
             "factor",
             "expand",
-            "∫",
+            "integral",
             "dx",
             "calculate",
             "compute",
             "evaluate",
         ]
     )
-    has_arithmetic = bool(re.search(r"\d[\d\s\+\-\*/\^×·xX\(\)\.]*\d", tokens))
+    has_arithmetic = bool(re.search(r"\d[\d\s\+\-\*/\^xX\(\)\.]*\d", tokens))
     return has_keyword or has_arithmetic
 
 
-def solve_math(question: str):
+def solve_math(question: str) -> Dict[str, str]:
     try:
         text = question.lower()
         # Pull out the last arithmetic-looking chunk; fallback to the whole question.
-        match = re.findall(r"[-+*/^×·xX()\d\s\.]+", text)
+        match = re.findall(r"[-+*/^xX()\d\s\.]+", text)
         expr_text = match[-1] if match else text
 
         # Normalize multiplication symbols and trim filler words.
-        expr_text = re.sub(r"(?<=\d)\s*[xX×·]\s*(?=\d)", "*", expr_text)
+        expr_text = re.sub(r"(?<=\d)\s*[xX]\s*(?=\d)", "*", expr_text)
         expr_text = re.sub(r"\b(whats|what is|calculate|compute|evaluate|solve)\b", "", expr_text).strip()
 
         expr = sp.sympify(expr_text)
         steps = []
         result = None
-        if "integrate" in text or "∫" in text:
+        if "integrate" in text or "integral" in text:
             result = sp.integrate(expr)
-            steps.append(f"Integrate the expression: ∫ {expr} dx = {result}")
+            steps.append(f"Integrate the expression: ? {expr} dx = {result}")
         elif "differentiate" in text or "derivative" in text:
             result = sp.diff(expr)
-            steps.append(f"Take derivative d/dx: {expr} → {result}")
+            steps.append(f"Take derivative d/dx: {expr} -> {result}")
         elif "limit" in text:
             x = list(expr.free_symbols)[0] if expr.free_symbols else sp.symbols("x")
             result = sp.limit(expr, x, 0)
             steps.append(f"Compute limit as {x}->0: {result}")
         elif "factor" in text:
             result = sp.factor(expr)
-            steps.append(f"Factor the expression: {expr} → {result}")
+            steps.append(f"Factor the expression: {expr} -> {result}")
         elif "expand" in text:
             result = sp.expand(expr)
-            steps.append(f"Expand the expression: {expr} → {result}")
+            steps.append(f"Expand the expression: {expr} -> {result}")
         else:
             result = sp.simplify(expr)
-            steps.append(f"Simplify: {expr} → {result}")
+            steps.append(f"Simplify: {expr} -> {result}")
 
         example = f"Check at x=1: {expr.subs({'x':1}) if expr.free_symbols else result}"
         return {
@@ -76,103 +94,20 @@ def solve_math(question: str):
             "example": "",
             "error": str(exc),
         }
-# math_engine.py
 
-def calculate(expression):
-    try:
-        # Remove unwanted spaces
-        expression = expression.replace(" ", "")
 
-        # Evaluate the math expression safely
-        result = eval(expression)
-
-        return result
-
-    except Exception as e:
+def calculate(expression: Union[str, None]) -> Union[float, str]:
+    """Lightweight calculator backing the /calculate route."""
+    if not expression:
         return "Error"
 
+    expr = expression.replace(" ", "").replace("^", "**")
 
-# Optional: advanced operations
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
-        return "Cannot divide by zero"
-    return a / b
-# math_engine.py
-
-import math
-
-def calculate(expression):
     try:
-        # Replace custom keywords with math functions
-        expression = expression.replace("log(", "math.log10(")   # base 10 log
-        expression = expression.replace("ln(", "math.log(")      # natural log
-        expression = expression.replace("sqrt(", "math.sqrt(")
-
-        # Evaluate safely (for hackathon demo)
-        result = eval(expression)
-
-        return result
-
+        return eval(expr, {"__builtins__": {}}, SAFE_MATH_FUNCS)
     except Exception:
-        return "Error"
+        try:
+            return float(sp.sympify(expr))
+        except Exception:
+            return "Error"
 
-
-# Individual functions (optional use)
-
-def log10(x):
-    if x <= 0:
-        return "Invalid input"
-    return math.log10(x)
-
-def ln(x):
-    if x <= 0:
-        return "Invalid input"
-    return math.log(x)
-
-def log_base(x, base):
-    if x <= 0 or base <= 0:
-        return "Invalid input"
-    return math.log(x, base)
-# math_engine.py
-
-import math
-
-def calculate(expression):
-    try:
-        expression = expression.replace(" ", "")
-
-        # Logarithms
-        expression = expression.replace("log(", "math.log10(")   # base 10
-        expression = expression.replace("ln(", "math.log(")      # natural log
-
-        # Square root
-        expression = expression.replace("sqrt(", "math.sqrt(")
-
-        # Trigonometric functions (in degrees)
-        expression = expression.replace("sin(", "math.sin(math.radians(")
-        expression = expression.replace("cos(", "math.cos(math.radians(")
-        expression = expression.replace("tan(", "math.tan(math.radians(")
-
-        # Inverse trigonometric functions (output in degrees)
-        expression = expression.replace("asin(", "math.degrees(math.asin(")
-        expression = expression.replace("acos(", "math.degrees(math.acos(")
-        expression = expression.replace("atan(", "math.degrees(math.atan(")
-
-        # Close brackets properly for trig conversions
-        expression = expression.replace(")", "))")
-
-        result = eval(expression)
-
-        return result
-
-    except Exception as e:
-        return "Error"

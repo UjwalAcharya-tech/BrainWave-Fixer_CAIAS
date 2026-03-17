@@ -1,7 +1,8 @@
 import docx
 import PyPDF2
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
+from scipy.sparse import spmatrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -13,17 +14,17 @@ class DocEngine:
         self.upload_dir = upload_dir
         self.upload_dir.mkdir(exist_ok=True)
         self.chunks: List[str] = []
-        self.vectorizer = None
-        self.matrix = None
-        self.filename = None
+        self.vectorizer: Optional[TfidfVectorizer] = None
+        self.matrix: Optional[spmatrix] = None
+        self.filename: Optional[str] = None
 
     def available(self) -> bool:
         return bool(self.chunks)
 
     def ingest(self, werk_file) -> dict:
-        filename = werk_file.filename
+        filename = werk_file.filename or "uploaded"
         path = self.upload_dir / filename
-        werk_file.save(path)
+        werk_file.save(str(path))
         text = self._load(path)
         self.chunks = self._chunk(text)
         self.vectorizer = TfidfVectorizer(tokenizer=preprocess, lowercase=True)
@@ -32,7 +33,7 @@ class DocEngine:
         return {"filename": filename, "chunks": len(self.chunks)}
 
     def query(self, question: str) -> Tuple[str, float]:
-        if not self.matrix:
+        if not self.vectorizer or self.matrix is None:
             return "No document indexed.", 0.0
         q_vec = self.vectorizer.transform([question])
         sims = cosine_similarity(q_vec, self.matrix)[0]
@@ -58,7 +59,7 @@ class DocEngine:
         return "\n".join(parts)
 
     def _docx(self, path: Path) -> str:
-        d = docx.Document(path)
+        d = docx.Document(str(path))
         return "\n".join([p.text for p in d.paragraphs])
 
     def _chunk(self, text: str, max_len: int = 900) -> List[str]:

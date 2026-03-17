@@ -38,6 +38,12 @@ class BrainWave {
     this.voiceBtn = document.getElementById('voice-btn');
     this.errorBox = document.getElementById('error-box');
 
+    // Calculator
+    this.calcInput = document.getElementById('calc-input');
+    this.calcBtn = document.getElementById('calc-btn');
+    this.calcResult = document.getElementById('calc-result');
+    this.calcValue = document.getElementById('calc-value');
+
     // Upload
     this.dropZone = document.getElementById('drop-zone');
     this.fileInput = document.getElementById('file-input');
@@ -92,6 +98,15 @@ class BrainWave {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         this.sendMessage();
+      }
+    });
+
+    // Calculator
+    this.calcBtn?.addEventListener('click', () => this.calculateExpression());
+    this.calcInput?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this.calculateExpression();
       }
     });
 
@@ -492,6 +507,43 @@ class BrainWave {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = 0.9;
       window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  async calculateExpression() {
+    const expression = this.calcInput.value.trim();
+    if (!expression) return;
+
+    try {
+      const response = await fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: expression })
+      });
+
+      const data = await response.json();
+      
+      // Extract the math result from the response
+      let result = data.math_result || data.introduction || 'Unable to calculate';
+      
+      // Clean up the result to show just the answer
+      if (typeof result === 'string') {
+        // Extract just the numeric/symbolic result
+        const match = result.match(/Result:\s*(.+?)(?:\n|$)/i) || 
+                     result.match(/=\s*(.+?)(?:\n|$)/i) ||
+                     result.match(/:\s*(.+?)(?:\n|$)/i);
+        result = match ? match[1].trim() : result;
+      }
+
+      // Display the result
+      this.calcValue.textContent = result;
+      this.calcResult.style.display = 'block';
+
+      // Clear input
+      this.calcInput.value = '';
+    } catch (error) {
+      this.calcValue.textContent = 'Error: Unable to calculate';
+      this.calcResult.style.display = 'block';
     }
   }
 

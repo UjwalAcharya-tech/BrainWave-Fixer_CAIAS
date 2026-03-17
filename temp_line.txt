@@ -1,0 +1,219 @@
+   0: import os
+   1: from pathlib import Path
+   2: from dotenv import load_dotenv
+   3: from openai import OpenAI
+   4: 
+   5: from flask import Flask, jsonify, render_template, request
+   4: 
+   7: from doc_engine import DocEngine
+   8: from lecture_generator import build_lecture_response
+   9: from math_engine import is_math_question, solve_math
+  10: from nlp_engine import detect_question_type, preprocess
+  11: from progress_tracker import ProgressTracker
+  12: from quiz_generator import generate_quiz
+  13: from wiki_engine import wiki_summary
+   4: 
+  15: # Load environment variables
+  16: load_dotenv()
+  17: OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+   4: 
+  19: # Initialize OpenAI client with validation
+  20: if OPENAI_API_KEY and OPENAI_API_KEY.strip():
+  21:     openai_client = OpenAI(api_key=OPENAI_API_KEY.strip())
+  22: else:
+  23:     print("⚠️  WARNING: No valid OpenAI API key found in .env file")
+  24:     openai_client = None
+   4: 
+  26: BASE_DIR = Path(__file__).parent
+   4: 
+  28: app = Flask(__name__, static_folder="static", template_folder="templates")
+   4: 
+  30: doc_engine = DocEngine(upload_dir=BASE_DIR / "uploads")
+  31: tracker = ProgressTracker(BASE_DIR / "user_data.json")
+   4: 
+   4: 
+  34: def level_from_score(score: float) -> str:
+  35:     if score > 90:
+  36:         return "Advanced"
+  37:     if score > 70:
+  38:         return "Intermediate"
+  39:     return "Beginner"
+   4: 
+   4: 
+  42: def craft_lecture(question: str, base_text: str, source: str, example: str = ""):
+  43:     topic = question
+  45:     explanation = (
+  46:         "Step-by-step teaching explanation:\n"
+  47:         "- Start from basics: " + base_text + "\n"
+  48:         "- Build the concept gradually, highlighting why it matters.\n"
+  49:         "- Show how the pieces fit together."
+  50:     )
+  51:     deep = "For deeper insight, connect this to related principles and edge cases."
+  52:     summary = "Remember the core idea and when to apply it."
+  53:     tips = "Teach it aloud, practice two examples, and quiz yourself."
+  54:     mistakes = "Common mistakes: skipping fundamentals, memorizing without context, ignoring assumptions."
+  55:     return intro, explanation, deep, example or base_text, summary, tips, mistakes
+   4: 
+  57: def get_openai_response(question: str) -> dict:
+  58:     """Get detailed educational response from OpenAI GPT-4 or fallback to local engines"""
+  59:     
+  60:     # Try OpenAI first if available
+  61:     if openai_client:
+  62:         system_prompt = """You are an advanced AI tutor for a professional AI learning platform called BrainWave.
+   4: 
+  64: Your role is to act as:
+  65: - A highly knowledgeable expert
+  66: - A clear and structured teacher
+  67: - A smart problem-solving assistant
+   4: 
+  69: Response Guidelines:
+  70: 1. Answer accurately and professionally
+  71: 2. For simple questions → give short and clear answers
+  72: 3. For complex questions → give detailed explanations step-by-step
+  73: 4. Use examples wherever possible
+  74: 5. Break down difficult concepts into simple language
+  75: 6. Use clear formatting with headings and bullet points
+   4: 
+  77: Provide responses in JSON format with these fields:
+  79:     "introduction": "Brief intro to the topic",
+  80:     "lecture_explanation": "Detailed step-by-step explanation with bullet points",
+  81:     "deep_dive": "Technical deeper understanding",
+  82:     "example": "Practical examples with code or illustrations",
+  83:     "summary": "Key points to remember",
+  84:     "tips": "Pro tips for better learning",
+  85:     "mistakes": "Common mistakes to avoid"
+   4: 
+  88:         try:
+  89:             response = openai_client.chat.completions.create(
+  90:                 model="gpt-4",
+  91:                 messages=[
+  94:                 ],
+  95:                 temperature=0.7,
+  96:                 max_tokens=2000
+  97:             )
+  98:             
+  99:             content = response.choices[0].message.content
+  98:             
+ 101:             # Try to parse as JSON, otherwise create structured response
+ 102:             import json
+ 103:             try:
+ 104:                 data = json.loads(content)
+ 105:             except json.JSONDecodeError:
+ 106:                 # If response isn't JSON, structure it
+ 108:                     "introduction": content.split('\n')[0] if content else question,
+ 109:                     "lecture_explanation": content,
+ 110:                     "deep_dive": "See the detailed explanation above for technical insights.",
+ 111:                     "example": "Refer to the examples in the explanation.",
+ 112:                     "summary": "Review the key points from the explanation.",
+ 113:                     "tips": "Practice and review the concepts regularly.",
+ 114:                     "mistakes": "Avoid memorizing without understanding."
+  98:             
+ 117:             return data
+ 118:         except Exception as e:
+ 120:             # Fall through to fallback
+  59:     
+ 122:     # Fallback: Use local engines for math and general knowledge
+  59:     
+ 125:     # Check if it's a math question
+ 126:     if is_math_question(question):
+ 127:         math_res = solve_math(question)
+ 128:         base_text = math_res.get("steps", math_res.get("solution", "Unable to solve"))
+ 129:         example = math_res.get("example", "")
+ 130:         source = "Math Engine (Local)"
+ 131:     else:
+ 132:         # Try to get from uploaded documents or Wikipedia
+ 133:         base_text = ""
+ 134:         example = ""
+ 135:         source = "General Knowledge (Local)"
+ 136:         
+ 137:         if doc_engine.available():
+ 138:             base_text, score = doc_engine.query(question)
+ 140:         else:
+ 141:             base_text = wiki_summary(question) or "Unable to find specific information."
+ 142:             source = "Wikipedia (Local)"
+  59:     
+ 144:     # Use craft_lecture to structure the response
+ 145:     intro, explanation, deep, example, summary, tips, mistakes = craft_lecture(question, base_text, source, example)
+  59:     
+ 148:         "introduction": intro,
+ 149:         "lecture_explanation": explanation,
+ 150:         "deep_dive": deep,
+ 151:         "example": example,
+ 152:         "summary": summary,
+ 153:         "tips": tips,
+ 154:         "mistakes": mistakes
+   4: 
+ 157: @app.route("/")
+ 158: def index():
+ 159:     return render_template("index.html")
+   4: 
+   4: 
+ 162: @app.route("/upload", methods=["POST"])
+ 163: def upload():
+ 164:     if "file" not in request.files:
+ 166:     file = request.files["file"]
+ 167:     if file.filename == "":
+ 169:     try:
+ 170:         info = doc_engine.ingest(file)
+ 172:     except Exception as exc:
+   4: 
+   4: 
+ 176: @app.route("/ask", methods=["POST"])
+ 177: def ask():
+ 179:     question = (payload.get("question") or "").strip()
+ 180:     if len(question) < 3:
+   4: 
+ 183:     # Get response from OpenAI GPT-4
+ 184:     openai_data = get_openai_response(question)
+  59:     
+ 186:     # Get user progress state for difficulty level
+ 187:     score_state = tracker.get()
+ 188:     difficulty = "easy" if score_state["level"] == "Beginner" else "medium" if score_state["level"] == "Intermediate" else "hard"
+  59:     
+ 190:     # Generate quiz based on the response
+ 191:     quiz = generate_quiz(openai_data.get("lecture_explanation", ""), difficulty=difficulty, num_q=8)
+   4: 
+ 193:     # Build response
+ 194:     resp = build_lecture_response(
+ 195:         topic=question,
+ 196:         introduction=openai_data.get("introduction", ""),
+ 197:         explanation=openai_data.get("lecture_explanation", ""),
+ 198:         deep_dive=openai_data.get("deep_dive", ""),
+ 199:         example=openai_data.get("example", ""),
+ 200:         summary=openai_data.get("summary", ""),
+ 202:         score_update=score_state,
+ 203:         level=score_state["level"],
+ 204:         suggestions=score_state["suggestions"],
+ 205:         tips=openai_data.get("tips", ""),
+ 206:         mistakes=openai_data.get("mistakes", ""),
+ 207:         source="OpenAI GPT-4",
+  50:     )
+ 209:     return jsonify(resp)
+   4: 
+   4: 
+ 212: @app.route("/quiz_submit", methods=["POST"])
+ 213: def quiz_submit():
+ 215:     topic = payload.get("topic", "quiz")
+ 216:     correct = bool(payload.get("correct", False))
+ 217:     updated = tracker.update(topic=topic, correct=correct)
+ 218:     return jsonify(updated)
+   4: 
+   4: 
+ 221: @app.route("/health")
+ 222: def health():
+   4: 
+   4: 
+ 226: if __name__ == "__main__":
+ 227:     port = int(os.environ.get("PORT", 5000))
+ 228:     ssl_cert = os.environ.get("SSL_CERT")
+ 229:     ssl_key = os.environ.get("SSL_KEY")
+ 230:     ssl_ctx = (ssl_cert, ssl_key) if ssl_cert and ssl_key else None
+ 231:     app.run(host="0.0.0.0", port=port, debug=True, ssl_context=ssl_ctx)
+ 232: from math_engine import calculate
+   4: 
+ 234: @app.route("/calculate", methods=["POST"])
+ 235: def calc():
+ 236:     expression = request.form.get("expression")
+ 237:     result = calculate(expression)
+ 238:     return str(result)
+   4: 
