@@ -1,0 +1,43 @@
+# BrainWave Fixer CAIAS
+
+## Overview
+BrainWave Fixer is an AI-powered educational tool that helps teachers identify which parts of a lesson students find difficult to understand.
+
+Students can interact with study material, highlight confusing sections, and the system analyzes this data to improve teaching effectiveness.
+
+---
+
+## Features
+- AI-generated study materials
+- Confusion detection
+- Quiz generation
+- Progress tracking
+- AI teacher assistance
+
+---
+
+## How to Run
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Run the app:
+   python app.py
+
+---
+
+## Tech Stack
+- Python
+- Natural Language Processing (NLP)
+- AI-based content generation
+
+---
+
+## Future Improvements
+- Web interface (UI)
+- Real-time analytics
+- Integration with learning platforms
+
+---
+
+## Author
+Ujwal Acharya
