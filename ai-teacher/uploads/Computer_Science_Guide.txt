@@ -1,0 +1,942 @@
+===== COMPUTER SCIENCE EDUCATIONAL RESOURCE =====
+COMPREHENSIVE GUIDE TO PROGRAMMING, ALGORITHMS, DATA STRUCTURES & SYSTEMS
+
+================================================================================
+FUNDAMENTALS OF COMPUTING
+================================================================================
+
+HISTORY OF COMPUTING
+Early Computers:
+- 1942: ENIAC (Electronic Numerical Integrator and Computer)
+  * First general-purpose electronic computer
+  * Weighed 30 tons, filled entire room
+  * Used for military calculations
+- 1950s-1960s: Mainframe era
+  * IBM dominated
+  * Shared computing resources
+- 1970s: Personal computers
+  * Apple II, Commodore 64, IBM PC
+  * Computing becomes accessible
+- 1980s-1990s: Desktop and laptop era
+  * Microsoft Windows, Apple Macintosh
+  * Internet and web emerge (World Wide Web - 1989)
+- 2000s: Mobile and cloud computing
+  * Smartphones revolutionize computing
+  * Cloud services (AWS, Azure, Google Cloud)
+- 2010s-2020s: AI and machine learning
+  * Deep learning, neural networks
+  * AI assistants, autonomous vehicles
+
+NUMBER SYSTEMS
+Binary (Base 2):
+- 0 and 1 only
+- Computer's native language
+- Example: 1010₂ = 10₁₀
+
+Decimal (Base 10):
+- 0-9 digits
+- Human standard system
+- Example: 42₁₀
+
+Hexadecimal (Base 16):
+- 0-9, A-F (10-15)
+- Used in computing for memory addresses, colors
+- Example: FF₁₆ = 255₁₀
+
+Conversion:
+- Decimal to binary: repeatedly divide by 2
+- Binary to decimal: sum powers of 2
+- Hexadecimal to binary: each hex digit = 4 binary digits
+
+BOOLEAN LOGIC
+AND: both true = true
+OR: at least one true = true
+NOT: inverts truth value
+XOR: exactly one true = true
+
+Truth Tables:
+- Used to define logic gates
+- Show all possible inputs and outputs
+- Foundation of digital circuits
+
+INFORMATION REPRESENTATION
+Bits:
+- Basic unit of information
+- 0 or 1
+- Binary digit
+
+Bytes:
+- 8 bits
+- 256 possible values (0-255)
+- Basic unit of memory storage
+
+ASCII:
+- American Standard Code for Information Interchange
+- 128 characters (letters, numbers, symbols)
+- Example: A = 65, a = 97
+
+Unicode:
+- Extended character set
+- Supports all languages
+- UTF-8: variable-length encoding
+
+================================================================================
+PROGRAMMING BASICS
+================================================================================
+
+PROGRAMMING LANGUAGES
+Classification:
+- Low-level: machine code, assembly (direct hardware control)
+- High-level: Python, Java, C++, JavaScript (human readable)
+- Interpreted: executed line by line (Python, JavaScript)
+- Compiled: translated to machine code before execution (C++, Java)
+
+Popular Languages:
+- Python: easy to learn, readable syntax, data science
+- Java: object-oriented, "write once, run anywhere"
+- JavaScript: web development, runs in browsers
+- C++: high performance, system programming
+- SQL: database queries
+- C#: Microsoft ecosystem, game development
+- Go: fast, concurrent, systems programming
+- Rust: memory safety, performance, systems programming
+
+BASIC CONCEPTS
+Variables:
+- Named storage locations
+- Hold data values
+- Types: integer, float, string, boolean
+- Declaration: var name = value;
+
+Data Types:
+- Integer: whole numbers (-5, 0, 42)
+- Float/Double: decimal numbers (3.14, 2.71828)
+- String: text ("Hello World")
+- Boolean: true/false
+- Array/List: ordered collection [1, 2, 3]
+- Dictionary/Map: key-value pairs {name: "John"}
+
+Operators:
+- Arithmetic: +, -, *, /, %, ** (exponent)
+- Comparison: ==, !=, <, >, <=, >=
+- Logical: and, or, not
+- Assignment: =, +=, -=, *=, /=
+
+Control Flow:
+- if/else: conditional execution
+- switch: multiple conditions
+- loops: for, while, do-while (repeat code)
+- break/continue: modify loop behavior
+
+FUNCTIONS
+Definition:
+- Reusable block of code
+- Performs specific task
+- Takes inputs (parameters), returns output
+- Example: function add(a, b) { return a + b; }
+
+Scope:
+- Local: variable accessible only within function
+- Global: variable accessible everywhere
+- Best practice: minimize global variables
+
+Recursion:
+- Function calls itself
+- Base case: stopping condition
+- Recursive case: function calls self
+- Example: factorial(n) = n * factorial(n-1)
+
+================================================================================
+DATA STRUCTURES
+================================================================================
+
+ARRAYS AND LISTS
+Arrays:
+- Fixed-size collection of items
+- Accessed by index (0-based)
+- Fast access: O(1)
+- Slow insertion/deletion: O(n)
+
+Lists (Dynamic Arrays):
+- Variable-size collection
+- Grows and shrinks automatically
+- Same access speed as arrays
+- Operations: append, insert, remove, access
+
+LINKED LISTS
+Structure:
+- Nodes containing data and pointer to next node
+- Head: first node
+- Tail: last node
+- None: end of list
+
+Advantages:
+- Fast insertion/deletion: O(1) at known position
+- Dynamic size
+
+Disadvantages:
+- Slow access: O(n)
+- Extra memory for pointers
+
+STACKS
+Properties:
+- Last-In-First-Out (LIFO)
+- Add and remove from top only
+- Push: add element
+- Pop: remove element
+- Peek: view top without removing
+
+Uses:
+- Function call stack
+- Undo/redo functionality
+- Backtracking algorithms
+- Browser history
+
+QUEUES
+Properties:
+- First-In-First-Out (FIFO)
+- Add at rear, remove at front
+- Enqueue: add element
+- Dequeue: remove element
+
+Uses:
+- Printer queues
+- Task scheduling
+- Message queues
+- Breadth-first search
+
+HASH TABLES (DICTIONARIES)
+Structure:
+- Key-value pairs
+- Hash function maps key to index
+- O(1) average access, insertion, deletion
+- Handles collisions: chaining or open addressing
+
+Uses:
+- Phone book (name → number)
+- Caches
+- Symbol tables
+
+TREES
+Structure:
+- Hierarchical data structure
+- Root: top node
+- Branches: connections between nodes
+- Leaves: nodes with no children
+
+Binary Trees:
+- Each node has max 2 children
+- Left child, right child
+
+Binary Search Trees:
+- Left child < parent < right child
+- Enables efficient searching
+- O(log n) average, O(n) worst case
+
+Balanced Trees:
+- AVL trees, Red-Black trees
+- Maintain O(log n) operations
+- Self-balancing during insertions/deletions
+
+Tree Traversals:
+- Inorder: left, root, right
+- Preorder: root, left, right
+- Postorder: left, right, root
+- Level-order: breadth-first
+
+GRAPHS
+Structure:
+- Vertices (nodes) and edges (connections)
+- Directed: edges have direction
+- Undirected: edges bidirectional
+- Weighted: edges have values
+- Cyclic: contains loops
+- Acyclic: no loops (DAG)
+
+Representation:
+- Adjacency matrix: 2D array
+- Adjacency list: list of neighbors
+- Edge list: list of edges
+
+Graph Algorithms:
+- Depth-First Search (DFS): explore deeply
+- Breadth-First Search (BFS): explore widely
+- Dijkstra's: shortest path (weighted)
+- Floyd-Warshall: all shortest paths
+- Topological sort: ordering for DAG
+
+================================================================================
+ALGORITHMS
+================================================================================
+
+ALGORITHM ANALYSIS
+Time Complexity:
+- Measures how runtime grows with input size
+- Big O notation: worst-case analysis
+- Examples:
+  * O(1): constant (array access)
+  * O(log n): logarithmic (binary search)
+  * O(n): linear (simple loop)
+  * O(n log n): linearithmic (merge sort)
+  * O(n²): quadratic (nested loops)
+  * O(2ⁿ): exponential (subset generation)
+  * O(n!): factorial (permutations)
+
+Space Complexity:
+- Measures memory usage relative to input
+- Same Big O notation
+- Trade-off: time vs space
+
+SORTING ALGORITHMS
+Bubble Sort:
+- Compare adjacent elements, swap if needed
+- Time: O(n²) average, O(n²) worst
+- Space: O(1)
+- Stable: maintains relative order
+- Simple but slow
+
+Selection Sort:
+- Find minimum, swap with current position
+- Time: O(n²) always
+- Space: O(1)
+- Unstable
+- Predictable but slow
+
+Insertion Sort:
+- Build sorted array one element at a time
+- Time: O(n²) average, O(n) best (nearly sorted)
+- Space: O(1)
+- Stable
+- Good for small or nearly sorted data
+
+Merge Sort:
+- Divide and conquer
+- Time: O(n log n) always
+- Space: O(n)
+- Stable
+- Fast but uses extra space
+
+Quick Sort:
+- Divide and conquer with pivot
+- Time: O(n log n) average, O(n²) worst
+- Space: O(log n) average
+- Unstable usually
+- Fast, widely used
+
+Heap Sort:
+- Use heap data structure
+- Time: O(n log n) always
+- Space: O(1)
+- Unstable
+- Good worst-case guarantee
+
+SEARCHING ALGORITHMS
+Linear Search:
+- Check each element until found
+- Time: O(n)
+- Space: O(1)
+- Works on unsorted data
+
+Binary Search:
+- Divide and conquer on sorted array
+- Time: O(log n)
+- Space: O(1) iterative, O(log n) recursive
+- REQUIRES sorted array
+
+DYNAMIC PROGRAMMING
+Concept:
+- Break problem into subproblems
+- Store results to avoid recalculation
+- Memoization: top-down approach
+- Tabulation: bottom-up approach
+
+Examples:
+- Fibonacci: fib(n) = fib(n-1) + fib(n-2)
+- Longest common subsequence
+- Knapsack problem
+- Coin change
+
+GREEDY ALGORITHMS
+Concept:
+- Make locally optimal choice at each step
+- Hope for global optimum
+- Fast but not always optimal
+
+Examples:
+- Huffman coding: compression
+- Dijkstra's algorithm: shortest path
+- Activity selection: maximum activities
+
+BACKTRACKING
+Concept:
+- Explore all possibilities
+- Abandon path when invalid
+- Return to try different path
+
+Examples:
+- N-Queens problem
+- Sudoku solver
+- Maze solving
+- Permutations and combinations
+
+================================================================================
+OBJECT-ORIENTED PROGRAMMING
+================================================================================
+
+CONCEPTS
+Classes and Objects:
+- Class: template/blueprint for objects
+- Object: instance of a class
+- Properties: characteristics (data members)
+- Methods: actions/behaviors (functions)
+
+Encapsulation:
+- Bundle data and methods together
+- Hide internal details
+- Public, private, protected access modifiers
+- Getters and setters control access
+
+Abstraction:
+- Hide complexity
+- Show only essential features
+- Abstract classes and interfaces
+- User doesn't need to know implementation
+
+Inheritance:
+- Child class inherits from parent class
+- Reuse code
+- Specialization: child adds/overrides functionality
+- Single vs multiple inheritance
+
+Polymorphism:
+- Same method, different implementations
+- Method overloading: different parameters
+- Method overriding: child redefines parent method
+- Allows flexible, extensible code
+
+DESIGN PATTERNS
+Singleton:
+- Only one instance of class exists
+- Global access point
+- Example: database connection
+
+Factory:
+- Create objects without specifying exact class
+- Decouples creation from usage
+- Example: create shapes without knowing constructor
+
+Observer:
+- One-to-many relationship
+- Notify multiple observers of changes
+- Example: event listeners
+
+Model-View-Controller (MVC):
+- Separate concerns
+- Model: data and logic
+- View: presentation
+- Controller: handles user input
+
+================================================================================
+DATABASES
+================================================================================
+
+RELATIONAL DATABASES
+Concepts:
+- Tables with rows and columns
+- Primary key: unique identifier
+- Foreign key: reference to another table
+- Normalization: reduce redundancy
+- ACID properties: Atomicity, Consistency, Isolation, Durability
+
+SQL (Structured Query Language):
+- Standard language for relational databases
+- SELECT: retrieve data
+- INSERT: add data
+- UPDATE: modify data
+- DELETE: remove data
+- JOIN: combine tables
+- WHERE: filter results
+- GROUP BY: aggregate data
+- ORDER BY: sort results
+
+Examples (Common SQL):
+```
+SELECT * FROM users WHERE age > 18;
+INSERT INTO users (name, age) VALUES ('John', 25);
+UPDATE users SET age = 26 WHERE name = 'John';
+DELETE FROM users WHERE age < 18;
+SELECT COUNT(*), age FROM users GROUP BY age;
+SELECT u.name, p.email FROM users u JOIN profiles p ON u.id = p.user_id;
+```
+
+DATABASES
+MySQL: Popular relational, open-source
+PostgreSQL: Advanced relational, powerful
+SQLite: Lightweight, file-based
+MongoDB: Document-based (NoSQL)
+Redis: In-memory key-value store (caching)
+
+NOSQL
+Document Databases (MongoDB):
+- Store documents (JSON-like)
+- Flexible schema
+- Good for varying data
+
+Key-Value Stores (Redis, Memcached):
+- Simple key-value pairs
+- Fast access
+- Good for caching
+
+Column-Family Stores:
+- Efficient for time-series data
+- Example: HBase
+
+Graph Databases:
+- Store relationships
+- Efficient for connected data
+- Example: Neo4j
+
+================================================================================
+WEB DEVELOPMENT
+================================================================================
+
+FRONTEND
+HTML (HyperText Markup Language):
+- Structure and content
+- Tags: <div>, <p>, <button>, <input>
+- Semantic HTML: meaningful tags (<header>, <nav>, <article>)
+
+CSS (Cascading Style Sheets):
+- Styling and layout
+- Selectors: element, class, ID
+- Properties: color, font-size, display, padding, margin
+- Flexbox and Grid: modern layout techniques
+- Box model: margin, border, padding, content
+- Responsive design: media queries for different screen sizes
+
+JavaScript:
+- Programming language for web
+- DOM manipulation: change HTML/CSS dynamically
+- Event handling: react to user actions
+- Asynchronous: fetch data, handle delays
+- Libraries: jQuery, React, Vue, Angular
+
+BACKEND
+Server: receives requests, processes, sends responses
+Languages: Python (Flask, Django), Node.js (Express), Java (Spring), PHP
+Databases: store persistent data
+APIs: expose endpoints for client requests
+
+MVC ARCHITECTURE
+Model: data and business logic
+View: user interface (HTML, templates)
+Controller: handles requests, updates model/view
+
+DATABASE INTERACTION
+Query builder: construct SQL statements
+ORM (Object-Relational Mapping): map objects to database tables
+Migrations: version control for database schema
+Query optimization: efficient data retrieval
+
+WEB SERVERS
+Apache: classic web server
+Nginx: modern, high-performance
+Node.js: JavaScript runtime server
+
+DEPLOYMENT
+Hosting: cloud platforms (AWS, Heroku, Google Cloud)
+Containerization: Docker packages application with dependencies
+CI/CD: continuous integration/deployment
+Domain and DNS: map domain name to server IP
+HTTPS/SSL: secure encrypted connection
+
+API DESIGN
+REST (Representational State Transfer):
+- GET: retrieve resource
+- POST: create resource
+- PUT: update resource
+- DELETE: remove resource
+- HTTP status codes: 200 (OK), 404 (not found), 500 (error)
+
+GraphQL: query language for APIs
+- Client specifies exactly what data needed
+- More efficient than REST sometimes
+
+AUTHENTICATION
+Password hashing: bcrypt, Argon2
+Session tokens: maintain user login state
+JWT: JSON Web Tokens for stateless auth
+OAuth: delegate authentication to third party
+
+================================================================================
+NETWORK AND SECURITY
+================================================================================
+
+NETWORKING BASICS
+IP Address:
+- Internet Protocol address
+- IPv4: four numbers (192.168.1.1)
+- IPv6: longer format for more addresses
+- Public vs private addresses
+
+Ports:
+- 80: HTTP (web)
+- 443: HTTPS (secure web)
+- 25: SMTP (email)
+- 22: SSH (secure shell)
+- 3306: MySQL database
+
+DNS (Domain Name System):
+- Translates domain name to IP address
+- Example: google.com → 142.251.218.46
+
+HTTP vs HTTPS:
+- HTTP: unencrypted (insecure)
+- HTTPS: encrypted with SSL/TLS (secure)
+
+SECURITY
+Encryption:
+- Symmetric: same key for encrypt/decrypt (AES)
+- Asymmetric: public/private key pair (RSA)
+
+Hashing:
+- One-way transformation
+- MD5 (obsolete), SHA-1 (weak), SHA-256 (strong)
+- Used for passwords, verification
+
+Common Vulnerabilities:
+- SQL Injection: malicious SQL in input
+- Cross-Site Scripting (XSS): inject javascript
+- Cross-Site Request Forgery (CSRF): unauthorized requests
+- Man-in-the-Middle (MITM): intercept communication
+- Denial of Service (DoS): overwhelm server
+
+Protection:
+- Input validation: check user input
+- Prepared statements: prevent SQL injection
+- Escape output: prevent XSS
+- Use HTTPS: encrypt communication
+- Keep software updated: patch vulnerabilities
+- Least privilege: minimum necessary permissions
+
+FIREWALLS
+- Block unauthorized access
+- Rules: allow/deny traffic by IP, port, protocol
+- Network and host-based
+
+================================================================================
+ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+================================================================================
+
+MACHINE LEARNING BASICS
+Supervised Learning:
+- Learn from labeled data
+- Input → Output mapping
+- Examples:
+  * Classification: predict category (spam/not spam)
+  * Regression: predict number (house price)
+
+Unsupervised Learning:
+- Learn from unlabeled data
+- Find patterns
+- Examples:
+  * Clustering: group similar items
+  * Dimensionality reduction: reduce features
+
+Reinforcement Learning:
+- Learn by trial and error
+- Rewards and punishments guide learning
+- Examples: game AI, robot control
+
+ALGORITHMS
+Linear Regression:
+- Fit line through data
+- Predict continuous values
+- Loss function: minimize squared errors
+
+Logistic Regression:
+- Classification using sigmoid function
+- Probability output (0 to 1)
+- Binary and multi-class
+
+Decision Trees:
+- Tree of yes/no questions
+- Splits data into regions
+- Easy to interpret
+
+Random Forests:
+- Multiple decision trees
+- Vote on prediction
+- More robust than single tree
+
+Support Vector Machines (SVM):
+- Find optimal separating line
+- Works for classification and regression
+- Handles non-linear with kernel trick
+
+Neural Networks:
+- Inspired by brain structure
+- Layers: input, hidden, output
+- Neurons: simple processing units
+- Weights adjusted during training
+- Activation functions: ReLU, sigmoid, tanh
+
+DEEP LEARNING
+Convolutional Neural Networks (CNN):
+- Specialized for images
+- Convolutional layers: extract features
+- Pooling layers: reduce dimensions
+- Applications: image classification, object detection
+
+Recurrent Neural Networks (RNN):
+- Handle sequences
+- LSTM: long short-term memory (better long-term dependencies)
+- Applications: text processing, time series, speech
+
+Transformers:
+- Attention mechanism: focus on relevant parts
+- Parallel processing
+- Better for NLP
+- Foundation for large language models (GPT, BERT)
+
+TRAINING
+Epochs: one pass through entire dataset
+Batch size: data processed before updating weights
+Learning rate: step size for weight adjustment
+Overfitting: model memorizes training data, poor generalization
+Underfitting: model too simple, poor performance
+Validation set: tune hyperparameters
+Test set: final evaluation
+
+EVALUATION
+Accuracy: percentage correct predictions
+Precision: true positives / predicted positives
+Recall: true positives / actual positives
+F1 Score: harmonic mean of precision and recall
+Confusion Matrix: shows true/false positives/negatives
+ROC Curve: trade-off between false positive and true positive rates
+
+APPLICATIONS
+Natural Language Processing (NLP):
+- Text classification, sentiment analysis
+- Named entity recognition, machine translation
+- Language models: predict next word
+
+Computer Vision:
+- Image classification: identify objects
+- Object detection: locate and classify
+- Facial recognition: identify people
+- Semantic segmentation: label each pixel
+
+Generative Models:
+- Generate new data similar to training data
+- GANs (Generative Adversarial Networks)
+- VAE (Variational Autoencoders)
+- Diffusion models
+
+Large Language Models:
+- Trained on massive text data
+- GPT: Generative Pre-trained Transformer
+- BERT, LLaMA, Claude: other models
+- Few-shot learning, zero-shot learning
+
+================================================================================
+SOFTWARE ENGINEERING
+================================================================================
+
+DEVELOPMENT METHODOLOGIES
+Waterfall:
+- Sequential: requirements → design → implementation → testing → deployment
+- Good for stable requirements
+- Changes are expensive
+
+Agile:
+- Iterative: short cycles (sprints), frequent delivery
+- Responsive to change
+- Examples: Scrum, Kanban
+
+DevOps:
+- Break barriers between development and operations
+- Continuous integration and deployment
+- Automate testing and deployment
+- Infrastructure as code
+
+VERSION CONTROL
+Git:
+- Distributed version control system
+- Track changes over time
+- Branching: develop features independently
+- Merging: combine changes
+- Commit: save snapshot of code
+- Push: send to remote repository
+- Pull: fetch from remote repository
+
+GitHub, GitLab, Bitbucket: hosting platforms
+
+TESTING
+Unit Testing:
+- Test individual functions/methods
+- Fast, isolated
+- Example frameworks: JUnit, pytest, Jest
+
+Integration Testing:
+- Test interaction between components
+- More complex than unit tests
+
+System Testing:
+- Test entire application
+- Verify all requirements met
+
+User Acceptance Testing (UAT):
+- Real users test system
+- Ensures meets business needs
+
+Test-Driven Development (TDD):
+- Write tests first, then code
+- Red (test fails) → Green (test passes) → Refactor
+
+CODE QUALITY
+Code Review:
+- Peer examination before merge
+- Catch bugs, improve design
+- Share knowledge
+
+Refactoring:
+- Improve code without changing behavior
+- Better readability, maintainability
+- Reduce duplication
+
+Design Principles:
+- DRY: Don't Repeat Yourself
+- KISS: Keep It Simple, Stupid
+- YAGNI: You Aren't Gonna Need It
+- SOLID Principles:
+  * S: Single Responsibility
+  * O: Open/Closed
+  * L: Liskov Substitution
+  * I: Interface Segregation
+  * D: Dependency Inversion
+
+DOCUMENTATION
+Code comments: explain why, not what
+README: overview and setup instructions
+API documentation: describe endpoints and parameters
+Design documents: architecture and decisions
+Changelog: track version history
+
+BUILD AND DEPLOYMENT
+Build tools: compile, link, package code
+Maven, Gradle, Webpack, npm
+Continuous integration: automatic builds and tests
+Deployment: move code to production
+Blue-green deployment: minimize downtime
+Canary deployment: gradual rollout
+
+================================================================================
+EMERGING TECHNOLOGIES
+================================================================================
+
+BLOCKCHAIN
+Concepts:
+- Distributed ledger technology
+- Blocks chained together with cryptographic hashes
+- Immutable: can't change past records
+- Decentralized: no central authority
+- Consensus: agreement on validity
+
+Applications:
+- Cryptocurrency: Bitcoin, Ethereum
+- Smart contracts: self-executing agreements
+- Supply chain: track goods
+- Voting: secure elections
+
+QUANTUM COMPUTING
+Qubits:
+- Quantum bits: 0, 1, or superposition
+- Exponential scaling
+- Quantum gates manipulate qubits
+
+Applications:
+- Cryptography breaking (and creating)
+- Drug discovery
+- Optimization problems
+- Challenges: decoherence, error correction
+
+CLOUD COMPUTING
+Models:
+- IaaS: Infrastructure as a Service (AWS EC2)
+- PaaS: Platform as a Service (Heroku)
+- SaaS: Software as a Service (Google Workspace)
+
+Advantages:
+- Scalability: grow with demand
+- Cost: pay only for use
+- Flexibility: access from anywhere
+- Reliability: redundancy, backups
+
+Edge Computing:
+- Processing at network edge (near devices)
+- Lower latency
+- Reduced bandwidth
+- Privacy (data stays local)
+
+================================================================================
+PRACTICE PROBLEMS
+================================================================================
+
+Programming:
+Q1: Write a function to check if a number is prime
+Q2: Implement factorial using recursion
+Q3: Find the second largest number in an array
+Q4: Reverse a string
+Q5: Implement binary search on a sorted array
+
+Data Structures:
+Q6: Implement a stack using arrays
+Q7: Detect cycle in a linked list
+Q8: Build a balanced binary search tree
+Q9: Graph: find shortest path between two nodes
+Q10: Implement hash table with collision handling
+
+Algorithms:
+Q11: Sort array of integers using merge sort
+Q12: Find longest common subsequence of two strings
+Q13: Solve 0/1 knapsack problem
+Q14: Find all permutations of a string
+Q15: Implement Dijkstra's algorithm
+
+SQL:
+Q16: Write query to find employees earning more than average
+Q17: Find duplicate records in table
+Q18: Calculate running total for time series data
+Q19: Get nth highest salary without using LIMIT
+Q20: Join three tables and aggregate data
+
+================================================================================
+KEY CONCEPTS TO UNDERSTAND
+================================================================================
+- Algorithm efficiency: time and space complexity matter
+- Trade-offs: speed vs space, flexibility vs performance
+- Abstraction: hide complexity with clear interfaces
+- Data structures: choose appropriate structure for problem
+- Algorithms: matching algorithm to problem is critical
+- Testing: quality code requires comprehensive tests
+- Security: cannot be an afterthought
+- Scalability: design for growth from the start
+- Maintainability: write code for humans to read
+- Continuous learning: technology evolves rapidly
+
+================================================================================
+ADDITIONAL RESOURCES
+================================================================================
+- LeetCode: practice coding problems
+- HackerRank: coding challenges and tutorials
+- Stanford CS courses: free online education
+- Coursera: university-level computer science courses
+- MIT OpenCourseWare: MIT classes available free
+- GeeksforGeeks: CS tutorials and references
+- Stack Overflow: Q&A for programming
+- GitHub: open source projects to learn from
+- Competitive programming: Codeforces, AtCoder
+- Project Euler: mathematical programming problems
+================================================================================
