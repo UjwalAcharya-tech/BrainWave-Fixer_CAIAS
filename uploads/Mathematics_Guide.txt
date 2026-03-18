@@ -1,0 +1,51 @@
+===== MATHEMATICS EDUCATIONAL RESOURCE =====
+
+ALGEBRA FUNDAMENTALS
+- Linear Equations: ax + b = c, solving for x
+- Quadratic Equations: ax² + bx + c = 0, using quadratic formula
+- Polynomial Operations: addition, subtraction, multiplication
+- Factorization: GCF, trinomial factoring, difference of squares
+- Exponent Laws: product rule, quotient rule, power rule
+- Radical Expressions: simplifying, rationalizing denominators
+
+GEOMETRY ESSENTIALS
+- Properties of Triangles: angles sum to 180°, Pythagorean theorem
+- Circle Geometry: radius, diameter, circumference, area
+- Volume and Surface Area: cubes, spheres, cylinders, cones
+- Transformations: translations, rotations, reflections, dilations
+- Coordinate Geometry: distance formula, midpoint formula
+
+CALCULUS BASICS
+- Limits: understanding limits at a point and at infinity
+- Derivatives: power rule, product rule, chain rule
+- Applications: rates of change, optimization problems
+- Integration: antiderivatives, definite integrals
+- Area Under Curves: using integration
+
+STATISTICS AND PROBABILITY
+- Data Analysis: mean, median, mode, standard deviation
+- Probability: basic probability, compound events, conditional probability
+- Distributions: normal distribution, binomial distribution
+- Hypothesis Testing: confidence intervals, significance tests
+- Regression Analysis: linear regression, correlation coefficients
+
+KEY FORMULAS
+- Area Circle: A = πr²
+- Pythagorean Theorem: a² + b² = c²
+- Quadratic Formula: x = [-b ± √(b²-4ac)] / 2a
+- Distance Formula: d = √[(x₂-x₁)² + (y₂-y₁)²]
+- Midpoint Formula: M = [(x₁+x₂)/2, (y₁+y₂)/2]
+
+PRACTICE QUESTIONS
+Q1: Solve 2x + 5 = 13
+Q2: Find the area of a circle with radius 7 cm
+Q3: Use the quadratic formula to solve x² + 3x - 10 = 0
+Q4: Calculate the distance between points (3,4) and (6,8)
+Q5: What is the probability of rolling a 6 on a standard die?
+
+RESOURCES FOR DEEPER LEARNING
+- Khan Academy Mathematics
+- PatrickJMT YouTube Channel
+- Wolfram Alpha for verification
+- Desmos Graphing Calculator
+- Art of Problem Solving

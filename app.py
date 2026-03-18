@@ -1,7 +1,5 @@
 import os
 from pathlib import Path
-from typing import Optional
-
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -9,7 +7,7 @@ from flask import Flask, jsonify, render_template, request
 
 from doc_engine import DocEngine
 from lecture_generator import build_lecture_response
-from math_engine import calculate, is_math_question, solve_math
+from math_engine import is_math_question, solve_math
 from nlp_engine import detect_question_type, preprocess
 from progress_tracker import ProgressTracker
 from quiz_generator import generate_quiz
@@ -23,7 +21,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if OPENAI_API_KEY and OPENAI_API_KEY.strip():
     openai_client = OpenAI(api_key=OPENAI_API_KEY.strip())
 else:
-    print("WARNING: No valid OpenAI API key found in .env file")
+    print("⚠️  WARNING: No valid OpenAI API key found in .env file")
     openai_client = None
 
 BASE_DIR = Path(__file__).parent
@@ -44,7 +42,7 @@ def level_from_score(score: float) -> str:
 
 def craft_lecture(question: str, base_text: str, source: str, example: str = ""):
     topic = question
-    intro = f"Let's explore {topic} from the ground up."
+    intro = f"Let’s explore {topic} from the ground up."
     explanation = (
         "Step-by-step teaching explanation:\n"
         "- Start from basics: " + base_text + "\n"
@@ -98,10 +96,10 @@ Provide responses in JSON format with these fields:
                 temperature=0.7,
                 max_tokens=2000
             )
-
+            
             content_raw = response.choices[0].message.content
             content: str = content_raw if isinstance(content_raw, str) else ""
-
+            
             # Try to parse as JSON, otherwise create structured response
             import json
             try:
@@ -117,7 +115,7 @@ Provide responses in JSON format with these fields:
                     "tips": "Practice and review the concepts regularly.",
                     "mistakes": "Avoid memorizing without understanding."
                 }
-
+            
             return data
         except Exception as e:
             print(f"OpenAI API Error: {str(e)}")
@@ -212,14 +210,6 @@ def ask():
     )
     return jsonify(resp)
 
-@app.route("/calculate", methods=["POST"])
-def calc():
-    expression: Optional[str] = request.form.get("expression")
-    if expression is None:
-        return jsonify({"error": "Missing expression"}), 400
-    result = calculate(expression)
-    return jsonify({"result": result})
-
 
 @app.route("/quiz_submit", methods=["POST"])
 def quiz_submit():
@@ -241,5 +231,10 @@ if __name__ == "__main__":
     ssl_key = os.environ.get("SSL_KEY")
     ssl_ctx = (ssl_cert, ssl_key) if ssl_cert and ssl_key else None
     app.run(host="0.0.0.0", port=port, debug=True, ssl_context=ssl_ctx)
+from math_engine import calculate
 
-
+@app.route("/calculate", methods=["POST"])
+def calc():
+    expression = request.form.get("expression")
+    result = calculate(expression)
+    return str(result)

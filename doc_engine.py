@@ -2,7 +2,7 @@ import docx
 import PyPDF2
 from pathlib import Path
 from typing import List, Tuple, Optional
-from scipy.sparse import spmatrix
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -15,7 +15,7 @@ class DocEngine:
         self.upload_dir.mkdir(exist_ok=True)
         self.chunks: List[str] = []
         self.vectorizer: Optional[TfidfVectorizer] = None
-        self.matrix: Optional[spmatrix] = None
+        self.matrix = None
         self.filename: Optional[str] = None
 
     def available(self) -> bool:
